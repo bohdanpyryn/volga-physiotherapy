@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VOLLGA Physiotherapy — Premium Recovery & Movement</title>
+<title>VOLGA Fizioterapi — Ndije Trupin në Maksimumin e Tij | Durrës, Shqipëri</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -84,6 +84,66 @@ body {
 .nav-cta:hover { background: var(--dark); transform: translateY(-1px); }
 .nav-mobile { display: none; cursor: pointer; background: none; border: none; }
 .nav-mobile span { display: block; width: 24px; height: 2px; background: var(--dark); margin: 5px 0; transition: .3s; }
+
+/* ---- LANGUAGE SWITCHER ---- */
+.lang-switcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.lang-current {
+  background: none;
+  border: 1.5px solid var(--beige);
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  letter-spacing: .04em;
+  transition: border-color .3s, color .3s;
+}
+.lang-current:hover { border-color: var(--gold); color: var(--dark); }
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--warm-white);
+  border: 1px solid var(--beige);
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 8px 30px rgba(44,36,32,.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity .25s, visibility .25s, transform .25s;
+  min-width: 130px;
+  z-index: 100;
+}
+.lang-switcher:hover .lang-dropdown,
+.lang-switcher.open .lang-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-option {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 8px 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: left;
+  transition: background .2s, color .2s;
+}
+.lang-option:hover { background: var(--cream); color: var(--dark); }
+.lang-option.active { color: var(--gold); font-weight: 500; }
 
 /* ---- HERO ---- */
 .hero {
@@ -243,7 +303,7 @@ body {
   line-height: 1.7;
 }
 
-/* ---- ABOUT / SPECIALISTS ---- */
+/* ---- ABOUT ---- */
 .about {
   padding: 120px 48px;
   max-width: 1320px;
@@ -495,18 +555,6 @@ body {
   color: var(--dark);
   font-weight: 500;
 }
-.map-placeholder {
-  width: 100%;
-  height: 300px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, var(--beige), var(--cream));
-  margin-top: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--stone);
-  font-size: 14px;
-}
 
 footer {
   background: var(--darker);
@@ -583,6 +631,7 @@ footer .footer-copy {
   .steps { grid-template-columns: 1fr; }
   .booking-cta h2 { font-size: 36px; }
   footer { padding: 40px 24px; flex-direction: column; text-align: center; }
+  .lang-switcher { order: -1; }
 }
 </style>
 </head>
@@ -590,14 +639,23 @@ footer .footer-copy {
 
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <a href="#" class="nav-brand">VOLLGA</a>
+  <a href="#" class="nav-brand">VOLGA</a>
   <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#about">Specialists</a>
-    <a href="#approach">Approach</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-    <a href="#booking" class="nav-cta">Book Now</a>
+    <a href="#services" data-i18n="nav.services">Shërbimet</a>
+    <a href="#about" data-i18n="nav.about">Rreth Nesh</a>
+    <a href="#approach" data-i18n="nav.approach">Procesi</a>
+    <a href="#testimonials" data-i18n="nav.testimonials">Dëshmitë</a>
+    <a href="#contact" data-i18n="nav.contact">Kontakti</a>
+    <div class="lang-switcher">
+      <button class="lang-current" aria-label="Change language">SQ</button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" data-lang="sq">Shqip</button>
+        <button class="lang-option" data-lang="it">Italiano</button>
+        <button class="lang-option" data-lang="en">English</button>
+        <button class="lang-option" data-lang="ru">Русский</button>
+      </div>
+    </div>
+    <a href="#booking" class="nav-cta" data-i18n="nav.book">Rezervo Tani</a>
   </div>
   <button class="nav-mobile" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -607,86 +665,86 @@ footer .footer-copy {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <h1 class="reveal">Your body deserves <em>expert</em> care</h1>
-    <p class="reveal reveal-delay-1">Precision physiotherapy rooted in evidence-based practice. We restore movement, rebuild strength, and guide your path to lasting recovery.</p>
+    <h1 class="reveal" data-i18n-html="hero.title">Ndije trupin në <em>maksimumin</em> e tij</h1>
+    <p class="reveal reveal-delay-1" data-i18n="hero.subtitle">Fizioterapi dhe rehabilitim profesional në Durrës, Shqipëri. Rikthejmë lëvizjen, rindërtojmë forcën dhe ju udhëheqim drejt shërimit të qëndrueshëm.</p>
     <a href="#booking" class="hero-cta reveal reveal-delay-2">
-      Begin Your Recovery
+      <span data-i18n="hero.cta">Fillo Rikuperimin</span>
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
     </a>
   </div>
   <div class="hero-image reveal reveal-delay-1">
     <div class="hero-image-inner"></div>
-    <div class="hero-badge">12+ years of clinical excellence</div>
+    <div class="hero-badge" data-i18n="hero.badge">Durrës, Currila — Hën–Sht 09:00–20:00</div>
   </div>
 </section>
 
 <!-- SERVICES -->
 <section class="services" id="services">
-  <div class="section-label reveal">What We Offer</div>
-  <h2 class="section-title reveal">Treatments designed around your recovery</h2>
+  <div class="section-label reveal" data-i18n="services.label">Çfarë Ofrojmë</div>
+  <h2 class="section-title reveal" data-i18n="services.title">Trajtime të dizenjuara rreth rikuperimit tuaj</h2>
   <div class="services-grid">
     <div class="service-card reveal reveal-delay-1">
       <div class="service-icon"></div>
-      <h3>Manual Therapy</h3>
-      <p>Hands-on techniques to restore joint mobility, release tension, and improve soft tissue function through targeted manual intervention.</p>
+      <h3 data-i18n="services.manual.title">Terapi Manuale</h3>
+      <p data-i18n="services.manual.desc">Teknika praktike për rikthimin e lëvizshmërisë së nyjeve, lirimin e tensionit dhe përmirësimin e funksionit të indeve të buta.</p>
     </div>
     <div class="service-card reveal reveal-delay-2">
       <div class="service-icon icon-2"></div>
-      <h3>Sports Rehabilitation</h3>
-      <p>Structured recovery programs for athletes at every level, from acute injury management to sport-specific return-to-play protocols.</p>
+      <h3 data-i18n="services.sports.title">Rehabilitim Sportiv</h3>
+      <p data-i18n="services.sports.desc">Programe të strukturuara rikuperimi për sportistë të çdo niveli, nga menaxhimi i dëmtimeve akute deri te protokollet e kthimit në sport.</p>
     </div>
     <div class="service-card reveal reveal-delay-3">
       <div class="service-icon icon-3"></div>
-      <h3>Postural Correction</h3>
-      <p>Comprehensive postural assessment and corrective exercise programs to address alignment issues and prevent recurring pain.</p>
+      <h3 data-i18n="services.posture.title">Korrigjim Postural</h3>
+      <p data-i18n="services.posture.desc">Vlerësim gjithëpërfshirës i posturës dhe programe ushtrimesh korrigjuese për të adresuar çrregullimet e shtrirjes.</p>
     </div>
     <div class="service-card reveal reveal-delay-1">
       <div class="service-icon icon-4"></div>
-      <h3>Pain Management</h3>
-      <p>Evidence-based approaches to chronic and acute pain, combining manual therapy with therapeutic exercise and education.</p>
+      <h3 data-i18n="services.pain.title">Menaxhimi i Dhimbjes</h3>
+      <p data-i18n="services.pain.desc">Qasje të bazuara në evidencë për dhimbjen kronike dhe akute, duke kombinuar terapinë manuale me ushtrime terapeutike.</p>
     </div>
     <div class="service-card reveal reveal-delay-2">
       <div class="service-icon icon-5"></div>
-      <h3>Mobility Training</h3>
-      <p>Targeted movement programs to restore range of motion, improve flexibility, and build functional strength for daily life.</p>
+      <h3 data-i18n="services.mobility.title">Trajnim Lëvizshmërie</h3>
+      <p data-i18n="services.mobility.desc">Programe lëvizjesh të synuara për rikthimin e amplitudës së lëvizjes, përmirësimin e fleksibilitetit dhe ndërtimin e forcës funksionale.</p>
     </div>
     <div class="service-card reveal reveal-delay-3">
       <div class="service-icon icon-6"></div>
-      <h3>Post-Surgical Recovery</h3>
-      <p>Guided rehabilitation following orthopaedic surgery, with progressive protocols tailored to your procedure and healing timeline.</p>
+      <h3 data-i18n="services.surgery.title">Rikuperim Pas-Operativ</h3>
+      <p data-i18n="services.surgery.desc">Rehabilitim i udhëhequr pas kirurgjisë ortopedike, me protokolle progresive të përshtatura për procedurën tuaj.</p>
     </div>
   </div>
 </section>
 
-<!-- ABOUT / SPECIALISTS -->
+<!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-image reveal"></div>
   <div class="about-content">
-    <div class="section-label reveal">Our Team</div>
-    <h2 class="section-title reveal">Specialists who understand your body</h2>
-    <p class="reveal">Our practitioners bring decades of combined experience in musculoskeletal health, sports medicine, and rehabilitation science. Every treatment plan is built on thorough assessment and genuine care.</p>
+    <div class="section-label reveal" data-i18n="about.label">Rreth Nesh</div>
+    <h2 class="section-title reveal" data-i18n="about.title">Të përkushtuar ndaj rikuperimit tuaj</h2>
+    <p class="reveal" data-i18n="about.desc">Në VOLGA Fizioterapi & Rehabilitim, kombinojmë ekspertizën profesionale me kujdesin e personalizuar. E vendosur në Durrës, Currila, klinika jonë ofron një mjedis mikpritës ku çdo plan trajtimi ndërtohet mbi vlerësim të plotë dhe përkushtim të vërtetë.</p>
     <div class="specialist reveal reveal-delay-1">
       <div class="specialist-avatar"></div>
       <div>
-        <h4>Dr. Olena Kovalenko</h4>
-        <div class="cred">DPT, MSc Sports Medicine</div>
-        <p>Lead clinician specialising in spinal rehabilitation and chronic pain management with 14 years of practice.</p>
+        <h4 data-i18n="about.care.title">Kujdes Profesional</h4>
+        <div class="cred" data-i18n="about.care.cred">Praktikë e Bazuar në Evidencë</div>
+        <p data-i18n="about.care.desc">Ekipi ynë përdor teknikat më të fundit të fizioterapisë dhe protokollet e rehabilitimit të përshtatura për çdo pacient.</p>
       </div>
     </div>
     <div class="specialist reveal reveal-delay-2">
       <div class="specialist-avatar"></div>
       <div>
-        <h4>Andrii Marchenko</h4>
-        <div class="cred">MSc Physiotherapy, CSCS</div>
-        <p>Sports rehabilitation specialist with expertise in ACL recovery, shoulder injuries, and athletic performance.</p>
+        <h4 data-i18n="about.personal.title">Qasje e Personalizuar</h4>
+        <div class="cred" data-i18n="about.personal.cred">Trajtim i Përqendruar te Pacienti</div>
+        <p data-i18n="about.personal.desc">Çdo plan rikuperimi është dizenjuar rreth nevojave, qëllimeve dhe stilit tuaj të jetesës.</p>
       </div>
     </div>
     <div class="specialist reveal reveal-delay-3">
       <div class="specialist-avatar"></div>
       <div>
-        <h4>Yulia Savchenko</h4>
-        <div class="cred">BSc Physiotherapy, PG Cert Pain Science</div>
-        <p>Focused on postural correction, mobility training, and women's health physiotherapy.</p>
+        <h4 data-i18n="about.schedule.title">Orar i Përshtatshëm</h4>
+        <div class="cred" data-i18n="about.schedule.cred">E Hënë – E Shtunë</div>
+        <p data-i18n="about.schedule.desc">Hapur gjashtë ditë në javë nga 09:00 deri në 20:00 për t'u përshtatur me orarin tuaj.</p>
       </div>
     </div>
   </div>
@@ -695,28 +753,28 @@ footer .footer-copy {
 <!-- RECOVERY APPROACH -->
 <section class="approach" id="approach">
   <div class="approach-inner">
-    <div class="section-label reveal">Our Process</div>
-    <h2 class="section-title reveal">A considered path to recovery</h2>
+    <div class="section-label reveal" data-i18n="approach.label">Procesi Ynë</div>
+    <h2 class="section-title reveal" data-i18n="approach.title">Një rrugë e menduar drejt rikuperimit</h2>
     <div class="steps">
       <div class="step reveal reveal-delay-1">
         <div class="step-num">01</div>
-        <h4>Assessment</h4>
-        <p>Thorough evaluation of your condition, movement patterns, and treatment goals.</p>
+        <h4 data-i18n="approach.step1.title">Vlerësimi</h4>
+        <p data-i18n="approach.step1.desc">Vlerësim i plotë i gjendjes suaj, modeleve të lëvizjes dhe qëllimeve të trajtimit.</p>
       </div>
       <div class="step reveal reveal-delay-2">
         <div class="step-num">02</div>
-        <h4>Treatment Plan</h4>
-        <p>A personalised roadmap combining the most effective therapeutic approaches for you.</p>
+        <h4 data-i18n="approach.step2.title">Plani i Trajtimit</h4>
+        <p data-i18n="approach.step2.desc">Një hartë rrugore e personalizuar që kombinon qasjet terapeutike më efektive për ju.</p>
       </div>
       <div class="step reveal reveal-delay-3">
         <div class="step-num">03</div>
-        <h4>Active Recovery</h4>
-        <p>Hands-on treatment paired with guided exercises to rebuild strength and mobility.</p>
+        <h4 data-i18n="approach.step3.title">Rikuperim Aktiv</h4>
+        <p data-i18n="approach.step3.desc">Trajtim praktik i shoqëruar me ushtrime të udhëhequra për rindërtimin e forcës dhe lëvizshmërisë.</p>
       </div>
       <div class="step reveal reveal-delay-4">
         <div class="step-num">04</div>
-        <h4>Long-term Wellness</h4>
-        <p>Ongoing support and preventive strategies to keep you moving pain-free.</p>
+        <h4 data-i18n="approach.step4.title">Mirëqenie Afatgjatë</h4>
+        <p data-i18n="approach.step4.desc">Mbështetje e vazhdueshme dhe strategji parandaluese për t'ju mbajtur në lëvizje pa dhimbje.</p>
       </div>
     </div>
   </div>
@@ -724,72 +782,432 @@ footer .footer-copy {
 
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
-  <div class="section-label reveal">Patient Stories</div>
-  <h2 class="section-title reveal">Trusted by those who've recovered</h2>
+  <div class="section-label reveal" data-i18n="testimonials.label">Histori Pacientësh</div>
+  <h2 class="section-title reveal" data-i18n="testimonials.title">Të besuar nga ata që janë rikuperuar</h2>
   <div class="testimonials-grid">
     <div class="testimonial-card reveal reveal-delay-1">
       <div class="quote-mark">&ldquo;</div>
-      <blockquote>After months of chronic back pain, the team at VOLLGA gave me a clear plan and genuine hope. Within six weeks I was moving without pain for the first time in years.</blockquote>
-      <div class="testimonial-author">Kateryna M.</div>
-      <div class="testimonial-condition">Chronic lower back pain</div>
+      <blockquote data-i18n="testimonials.t1.quote">Pas muajsh dhimbje kronike në shpinë, ekipi më dha një plan të qartë dhe shpresë të vërtetë. Brenda javësh po lëvizja pa dhimbje për herë të parë pas vitesh.</blockquote>
+      <div class="testimonial-author">Arta M.</div>
+      <div class="testimonial-condition" data-i18n="testimonials.t1.condition">Dhimbje kronike e mesit</div>
     </div>
     <div class="testimonial-card reveal reveal-delay-2">
       <div class="quote-mark">&ldquo;</div>
-      <blockquote>Professional, calm, and deeply knowledgeable. My knee rehabilitation was handled with precision at every stage. I'm back on the pitch and feeling stronger than before.</blockquote>
-      <div class="testimonial-author">Dmytro S.</div>
-      <div class="testimonial-condition">ACL reconstruction recovery</div>
+      <blockquote data-i18n="testimonials.t2.quote">Profesionalë, të qetë dhe shumë të ditur. Rehabilitimi im i gjurit u trajtua me saktësi në çdo fazë. Jam kthyer në fushë dhe ndihem më i fortë se më parë.</blockquote>
+      <div class="testimonial-author">Erion S.</div>
+      <div class="testimonial-condition" data-i18n="testimonials.t2.condition">Rikuperim nga rindërtimi i ACL</div>
     </div>
     <div class="testimonial-card reveal reveal-delay-3">
       <div class="quote-mark">&ldquo;</div>
-      <blockquote>The posture work has been transformative. I sit at a desk all day and the difference in how I carry myself and how I feel is remarkable. Highly recommend.</blockquote>
-      <div class="testimonial-author">Iryna V.</div>
-      <div class="testimonial-condition">Postural correction program</div>
+      <blockquote data-i18n="testimonials.t3.quote">Puna me posturën ka qenë transformuese. Ulem në tavolinë gjithë ditën dhe ndryshimi në mënyrën si mbahem dhe si ndihem është i jashtëzakonshëm. E rekomandoj shumë.</blockquote>
+      <div class="testimonial-author">Elira V.</div>
+      <div class="testimonial-condition" data-i18n="testimonials.t3.condition">Program korrigjimi postural</div>
     </div>
   </div>
 </section>
 
 <!-- BOOKING CTA -->
 <section class="booking-cta" id="booking">
-  <div class="section-label reveal">Take the First Step</div>
-  <h2 class="reveal">Your recovery begins with a conversation</h2>
-  <p class="reveal reveal-delay-1">Book a consultation and let our team design a treatment plan around your needs, your body, and your goals.</p>
-  <a href="#contact" class="reveal reveal-delay-2">Book Your Appointment</a>
+  <div class="section-label reveal" data-i18n="booking.label">Hapi i Parë</div>
+  <h2 class="reveal" data-i18n="booking.title">Rikuperimi juaj fillon me një bisedë</h2>
+  <p class="reveal reveal-delay-1" data-i18n="booking.desc">Rezervoni një konsultë dhe lini ekipin tonë të dizenjojë një plan trajtimi rreth nevojave, trupit dhe qëllimeve tuaja.</p>
+  <a href="tel:+355694013013" class="reveal reveal-delay-2" data-i18n="booking.cta">Thirr +355 694 013 013</a>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-info reveal">
-    <h3>Visit Us</h3>
-    <p><strong>Address</strong><br>Volodymyrska St 42, Kyiv 01030</p>
-    <p><strong>Phone</strong><br>+380 44 123 4567</p>
-    <p><strong>Email</strong><br>hello@vollga.clinic</p>
-    <p><strong>Hours</strong><br>Mon–Fri: 8:00–20:00<br>Sat: 9:00–15:00<br>Sun: Closed</p>
-    <div class="map-placeholder">Map placeholder</div>
+    <h3 data-i18n="contact.visit">Na Vizitoni</h3>
+    <p><strong data-i18n="contact.address.label">Adresa</strong><br><span data-i18n="contact.address.value">Durrës, Currila, Shqipëri</span></p>
+    <p><strong data-i18n="contact.phone.label">Telefoni</strong><br><a href="tel:+355694013013" style="color:inherit;text-decoration:none;">+355 694 013 013</a></p>
+    <p><strong>Instagram</strong><br><a href="https://www.instagram.com/volga_fizioterapi/" target="_blank" style="color:var(--gold);text-decoration:none;">@volga_fizioterapi</a></p>
+    <p><strong data-i18n="contact.hours.label">Orari</strong><br><span data-i18n="contact.hours.value">Hën–Sht: 09:00–20:00</span><br><span data-i18n="contact.hours.closed">Die: Mbyllur</span></p>
+    <div style="width:100%;height:300px;border-radius:18px;overflow:hidden;margin-top:32px;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2993.0!2d19.47!3d41.35!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fdb0c6cfece6f%3A0x78694bb68e9e4b2b!2z!5e0!3m2!1sen!2s!4v1" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </div>
   <div class="contact-info reveal reveal-delay-2">
-    <h3>Send a Message</h3>
+    <h3 data-i18n="contact.message">Dërgo një Mesazh</h3>
     <form style="display:flex;flex-direction:column;gap:20px;margin-top:8px;" onsubmit="event.preventDefault()">
-      <input type="text" placeholder="Your name" style="padding:14px 20px;border:1px solid var(--beige);border-radius:12px;font-family:inherit;font-size:15px;background:var(--cream);outline:none;transition:border-color .3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--beige)'">
-      <input type="email" placeholder="Email address" style="padding:14px 20px;border:1px solid var(--beige);border-radius:12px;font-family:inherit;font-size:15px;background:var(--cream);outline:none;transition:border-color .3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--beige)'">
-      <textarea placeholder="Tell us about your concern" rows="4" style="padding:14px 20px;border:1px solid var(--beige);border-radius:12px;font-family:inherit;font-size:15px;background:var(--cream);outline:none;resize:vertical;transition:border-color .3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--beige)'"></textarea>
-      <button type="submit" style="background:var(--gold);color:#fff;border:none;padding:16px 36px;border-radius:100px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;letter-spacing:.04em;transition:background .3s;align-self:flex-start;" onmouseover="this.style.background='var(--dark)'" onmouseout="this.style.background='var(--gold)'">Send Message</button>
+      <input type="text" data-i18n-placeholder="form.name" placeholder="Emri juaj" style="padding:14px 20px;border:1px solid var(--beige);border-radius:12px;font-family:inherit;font-size:15px;background:var(--cream);outline:none;transition:border-color .3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--beige)'">
+      <input type="email" data-i18n-placeholder="form.email" placeholder="Adresa e emailit" style="padding:14px 20px;border:1px solid var(--beige);border-radius:12px;font-family:inherit;font-size:15px;background:var(--cream);outline:none;transition:border-color .3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--beige)'">
+      <textarea data-i18n-placeholder="form.concern" placeholder="Na tregoni për shqetësimin tuaj" rows="4" style="padding:14px 20px;border:1px solid var(--beige);border-radius:12px;font-family:inherit;font-size:15px;background:var(--cream);outline:none;resize:vertical;transition:border-color .3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--beige)'"></textarea>
+      <button type="submit" data-i18n="form.send" style="background:var(--gold);color:#fff;border:none;padding:16px 36px;border-radius:100px;font-family:inherit;font-size:15px;font-weight:500;cursor:pointer;letter-spacing:.04em;transition:background .3s;align-self:flex-start;" onmouseover="this.style.background='var(--dark)'" onmouseout="this.style.background='var(--gold)'">Dërgo Mesazhin</button>
     </form>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand">VOLLGA</div>
+  <div class="footer-brand">VOLGA</div>
   <div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#about">Team</a>
-    <a href="#approach">Approach</a>
-    <a href="#contact">Contact</a>
+    <a href="#services" data-i18n="footer.services">Shërbimet</a>
+    <a href="#about" data-i18n="footer.about">Rreth Nesh</a>
+    <a href="#approach" data-i18n="footer.approach">Procesi</a>
+    <a href="#contact" data-i18n="footer.contact">Kontakti</a>
+    <a href="https://www.instagram.com/volga_fizioterapi/" target="_blank">Instagram</a>
   </div>
-  <div class="footer-copy">&copy; 2026 VOLLGA Physiotherapy. All rights reserved.</div>
+  <div class="footer-copy" data-i18n="footer.copy">&copy; 2026 VOLGA Fizioterapi & Rehabilitim. Durrës, Shqipëri.</div>
 </footer>
 
 <script>
+const translations = {
+  sq: {
+    "page.title": "VOLGA Fizioterapi — Ndije Trupin në Maksimumin e Tij | Durrës, Shqipëri",
+    "nav.services": "Shërbimet",
+    "nav.about": "Rreth Nesh",
+    "nav.approach": "Procesi",
+    "nav.testimonials": "Dëshmitë",
+    "nav.contact": "Kontakti",
+    "nav.book": "Rezervo Tani",
+    "hero.title": "Ndije trupin në <em>maksimumin</em> e tij",
+    "hero.subtitle": "Fizioterapi dhe rehabilitim profesional në Durrës, Shqipëri. Rikthejmë lëvizjen, rindërtojmë forcën dhe ju udhëheqim drejt shërimit të qëndrueshëm.",
+    "hero.cta": "Fillo Rikuperimin",
+    "hero.badge": "Durrës, Currila — Hën–Sht 09:00–20:00",
+    "services.label": "Çfarë Ofrojmë",
+    "services.title": "Trajtime të dizenjuara rreth rikuperimit tuaj",
+    "services.manual.title": "Terapi Manuale",
+    "services.manual.desc": "Teknika praktike për rikthimin e lëvizshmërisë së nyjeve, lirimin e tensionit dhe përmirësimin e funksionit të indeve të buta.",
+    "services.sports.title": "Rehabilitim Sportiv",
+    "services.sports.desc": "Programe të strukturuara rikuperimi për sportistë të çdo niveli, nga menaxhimi i dëmtimeve akute deri te protokollet e kthimit në sport.",
+    "services.posture.title": "Korrigjim Postural",
+    "services.posture.desc": "Vlerësim gjithëpërfshirës i posturës dhe programe ushtrimesh korrigjuese për të adresuar çrregullimet e shtrirjes.",
+    "services.pain.title": "Menaxhimi i Dhimbjes",
+    "services.pain.desc": "Qasje të bazuara në evidencë për dhimbjen kronike dhe akute, duke kombinuar terapinë manuale me ushtrime terapeutike.",
+    "services.mobility.title": "Trajnim Lëvizshmërie",
+    "services.mobility.desc": "Programe lëvizjesh të synuara për rikthimin e amplitudës së lëvizjes, përmirësimin e fleksibilitetit dhe ndërtimin e forcës funksionale.",
+    "services.surgery.title": "Rikuperim Pas-Operativ",
+    "services.surgery.desc": "Rehabilitim i udhëhequr pas kirurgjisë ortopedike, me protokolle progresive të përshtatura për procedurën tuaj.",
+    "about.label": "Rreth Nesh",
+    "about.title": "Të përkushtuar ndaj rikuperimit tuaj",
+    "about.desc": "Në VOLGA Fizioterapi & Rehabilitim, kombinojmë ekspertizën profesionale me kujdesin e personalizuar. E vendosur në Durrës, Currila, klinika jonë ofron një mjedis mikpritës ku çdo plan trajtimi ndërtohet mbi vlerësim të plotë dhe përkushtim të vërtetë.",
+    "about.care.title": "Kujdes Profesional",
+    "about.care.cred": "Praktikë e Bazuar në Evidencë",
+    "about.care.desc": "Ekipi ynë përdor teknikat më të fundit të fizioterapisë dhe protokollet e rehabilitimit të përshtatura për çdo pacient.",
+    "about.personal.title": "Qasje e Personalizuar",
+    "about.personal.cred": "Trajtim i Përqendruar te Pacienti",
+    "about.personal.desc": "Çdo plan rikuperimi është dizenjuar rreth nevojave, qëllimeve dhe stilit tuaj të jetesës.",
+    "about.schedule.title": "Orar i Përshtatshëm",
+    "about.schedule.cred": "E Hënë – E Shtunë",
+    "about.schedule.desc": "Hapur gjashtë ditë në javë nga 09:00 deri në 20:00 për t'u përshtatur me orarin tuaj.",
+    "approach.label": "Procesi Ynë",
+    "approach.title": "Një rrugë e menduar drejt rikuperimit",
+    "approach.step1.title": "Vlerësimi",
+    "approach.step1.desc": "Vlerësim i plotë i gjendjes suaj, modeleve të lëvizjes dhe qëllimeve të trajtimit.",
+    "approach.step2.title": "Plani i Trajtimit",
+    "approach.step2.desc": "Një hartë rrugore e personalizuar që kombinon qasjet terapeutike më efektive për ju.",
+    "approach.step3.title": "Rikuperim Aktiv",
+    "approach.step3.desc": "Trajtim praktik i shoqëruar me ushtrime të udhëhequra për rindërtimin e forcës dhe lëvizshmërisë.",
+    "approach.step4.title": "Mirëqenie Afatgjatë",
+    "approach.step4.desc": "Mbështetje e vazhdueshme dhe strategji parandaluese për t'ju mbajtur në lëvizje pa dhimbje.",
+    "testimonials.label": "Histori Pacientësh",
+    "testimonials.title": "Të besuar nga ata që janë rikuperuar",
+    "testimonials.t1.quote": "Pas muajsh dhimbje kronike në shpinë, ekipi më dha një plan të qartë dhe shpresë të vërtetë. Brenda javësh po lëvizja pa dhimbje për herë të parë pas vitesh.",
+    "testimonials.t1.condition": "Dhimbje kronike e mesit",
+    "testimonials.t2.quote": "Profesionalë, të qetë dhe shumë të ditur. Rehabilitimi im i gjurit u trajtua me saktësi në çdo fazë. Jam kthyer në fushë dhe ndihem më i fortë se më parë.",
+    "testimonials.t2.condition": "Rikuperim nga rindërtimi i ACL",
+    "testimonials.t3.quote": "Puna me posturën ka qenë transformuese. Ulem në tavolinë gjithë ditën dhe ndryshimi në mënyrën si mbahem dhe si ndihem është i jashtëzakonshëm. E rekomandoj shumë.",
+    "testimonials.t3.condition": "Program korrigjimi postural",
+    "booking.label": "Hapi i Parë",
+    "booking.title": "Rikuperimi juaj fillon me një bisedë",
+    "booking.desc": "Rezervoni një konsultë dhe lini ekipin tonë të dizenjojë një plan trajtimi rreth nevojave, trupit dhe qëllimeve tuaja.",
+    "booking.cta": "Thirr +355 694 013 013",
+    "contact.visit": "Na Vizitoni",
+    "contact.address.label": "Adresa",
+    "contact.address.value": "Durrës, Currila, Shqipëri",
+    "contact.phone.label": "Telefoni",
+    "contact.hours.label": "Orari",
+    "contact.hours.value": "Hën–Sht: 09:00–20:00",
+    "contact.hours.closed": "Die: Mbyllur",
+    "contact.message": "Dërgo një Mesazh",
+    "form.name": "Emri juaj",
+    "form.email": "Adresa e emailit",
+    "form.concern": "Na tregoni për shqetësimin tuaj",
+    "form.send": "Dërgo Mesazhin",
+    "footer.services": "Shërbimet",
+    "footer.about": "Rreth Nesh",
+    "footer.approach": "Procesi",
+    "footer.contact": "Kontakti",
+    "footer.copy": "\u00a9 2026 VOLGA Fizioterapi & Rehabilitim. Durrës, Shqipëri."
+  },
+  en: {
+    "page.title": "VOLGA Physiotherapy — Feel Your Body Best | Durrës, Albania",
+    "nav.services": "Services",
+    "nav.about": "About Us",
+    "nav.approach": "Approach",
+    "nav.testimonials": "Testimonials",
+    "nav.contact": "Contact",
+    "nav.book": "Book Now",
+    "hero.title": "Feel your body <em>best</em>",
+    "hero.subtitle": "Professional physiotherapy and rehabilitation in Durrës, Albania. We restore movement, rebuild strength, and guide your path to lasting recovery.",
+    "hero.cta": "Begin Your Recovery",
+    "hero.badge": "Durrës, Currila — Mon–Sat 09:00–20:00",
+    "services.label": "What We Offer",
+    "services.title": "Treatments designed around your recovery",
+    "services.manual.title": "Manual Therapy",
+    "services.manual.desc": "Hands-on techniques to restore joint mobility, release tension, and improve soft tissue function through targeted manual intervention.",
+    "services.sports.title": "Sports Rehabilitation",
+    "services.sports.desc": "Structured recovery programs for athletes at every level, from acute injury management to sport-specific return-to-play protocols.",
+    "services.posture.title": "Postural Correction",
+    "services.posture.desc": "Comprehensive postural assessment and corrective exercise programs to address alignment issues and prevent recurring pain.",
+    "services.pain.title": "Pain Management",
+    "services.pain.desc": "Evidence-based approaches to chronic and acute pain, combining manual therapy with therapeutic exercise and education.",
+    "services.mobility.title": "Mobility Training",
+    "services.mobility.desc": "Targeted movement programs to restore range of motion, improve flexibility, and build functional strength for daily life.",
+    "services.surgery.title": "Post-Surgical Recovery",
+    "services.surgery.desc": "Guided rehabilitation following orthopaedic surgery, with progressive protocols tailored to your procedure and healing timeline.",
+    "about.label": "About Us",
+    "about.title": "Dedicated to your recovery",
+    "about.desc": "At VOLGA Physiotherapy & Rehabilitation, we combine professional expertise with personalised care. Based in Durrës, Currila, our clinic provides a welcoming environment where every treatment plan is built on thorough assessment and genuine commitment to your wellbeing.",
+    "about.care.title": "Professional Care",
+    "about.care.cred": "Evidence-based Practice",
+    "about.care.desc": "Our team uses the latest physiotherapy techniques and rehabilitation protocols tailored to each patient.",
+    "about.personal.title": "Personalised Approach",
+    "about.personal.cred": "Patient-centred Treatment",
+    "about.personal.desc": "Every recovery plan is designed around your specific needs, goals, and lifestyle.",
+    "about.schedule.title": "Convenient Schedule",
+    "about.schedule.cred": "Monday – Saturday",
+    "about.schedule.desc": "Open six days a week from 09:00 to 20:00 to fit your schedule.",
+    "approach.label": "Our Process",
+    "approach.title": "A considered path to recovery",
+    "approach.step1.title": "Assessment",
+    "approach.step1.desc": "Thorough evaluation of your condition, movement patterns, and treatment goals.",
+    "approach.step2.title": "Treatment Plan",
+    "approach.step2.desc": "A personalised roadmap combining the most effective therapeutic approaches for you.",
+    "approach.step3.title": "Active Recovery",
+    "approach.step3.desc": "Hands-on treatment paired with guided exercises to rebuild strength and mobility.",
+    "approach.step4.title": "Long-term Wellness",
+    "approach.step4.desc": "Ongoing support and preventive strategies to keep you moving pain-free.",
+    "testimonials.label": "Patient Stories",
+    "testimonials.title": "Trusted by those who've recovered",
+    "testimonials.t1.quote": "After months of chronic back pain, the team gave me a clear plan and genuine hope. Within weeks I was moving without pain for the first time in years.",
+    "testimonials.t1.condition": "Chronic lower back pain",
+    "testimonials.t2.quote": "Professional, calm, and deeply knowledgeable. My knee rehabilitation was handled with precision at every stage. I'm back on the pitch and feeling stronger than before.",
+    "testimonials.t2.condition": "ACL reconstruction recovery",
+    "testimonials.t3.quote": "The posture work has been transformative. I sit at a desk all day and the difference in how I carry myself and how I feel is remarkable. Highly recommend.",
+    "testimonials.t3.condition": "Postural correction program",
+    "booking.label": "Take the First Step",
+    "booking.title": "Your recovery begins with a conversation",
+    "booking.desc": "Book a consultation and let our team design a treatment plan around your needs, your body, and your goals.",
+    "booking.cta": "Call +355 694 013 013",
+    "contact.visit": "Visit Us",
+    "contact.address.label": "Address",
+    "contact.address.value": "Durrës, Currila, Albania",
+    "contact.phone.label": "Phone",
+    "contact.hours.label": "Hours",
+    "contact.hours.value": "Mon–Sat: 09:00–20:00",
+    "contact.hours.closed": "Sun: Closed",
+    "contact.message": "Send a Message",
+    "form.name": "Your name",
+    "form.email": "Email address",
+    "form.concern": "Tell us about your concern",
+    "form.send": "Send Message",
+    "footer.services": "Services",
+    "footer.about": "About",
+    "footer.approach": "Approach",
+    "footer.contact": "Contact",
+    "footer.copy": "\u00a9 2026 VOLGA Physiotherapy & Rehabilitation. Durrës, Albania."
+  },
+  it: {
+    "page.title": "VOLGA Fisioterapia — Senti il Tuo Corpo al Meglio | Durrës, Albania",
+    "nav.services": "Servizi",
+    "nav.about": "Chi Siamo",
+    "nav.approach": "Approccio",
+    "nav.testimonials": "Testimonianze",
+    "nav.contact": "Contatti",
+    "nav.book": "Prenota Ora",
+    "hero.title": "Senti il tuo corpo al <em>meglio</em>",
+    "hero.subtitle": "Fisioterapia e riabilitazione professionale a Durrës, Albania. Ripristiniamo il movimento, ricostruiamo la forza e vi guidiamo verso un recupero duraturo.",
+    "hero.cta": "Inizia il Recupero",
+    "hero.badge": "Durrës, Currila — Lun–Sab 09:00–20:00",
+    "services.label": "Cosa Offriamo",
+    "services.title": "Trattamenti progettati intorno al vostro recupero",
+    "services.manual.title": "Terapia Manuale",
+    "services.manual.desc": "Tecniche manuali per ripristinare la mobilità articolare, rilasciare la tensione e migliorare la funzione dei tessuti molli.",
+    "services.sports.title": "Riabilitazione Sportiva",
+    "services.sports.desc": "Programmi di recupero strutturati per atleti di ogni livello, dalla gestione degli infortuni acuti ai protocolli di ritorno allo sport.",
+    "services.posture.title": "Correzione Posturale",
+    "services.posture.desc": "Valutazione posturale completa e programmi di esercizi correttivi per affrontare problemi di allineamento e prevenire il dolore ricorrente.",
+    "services.pain.title": "Gestione del Dolore",
+    "services.pain.desc": "Approcci basati sull'evidenza per il dolore cronico e acuto, combinando terapia manuale con esercizio terapeutico ed educazione.",
+    "services.mobility.title": "Allenamento della Mobilità",
+    "services.mobility.desc": "Programmi di movimento mirati per ripristinare l'ampiezza di movimento, migliorare la flessibilità e costruire forza funzionale.",
+    "services.surgery.title": "Recupero Post-Chirurgico",
+    "services.surgery.desc": "Riabilitazione guidata dopo chirurgia ortopedica, con protocolli progressivi adattati alla vostra procedura e tempistica di guarigione.",
+    "about.label": "Chi Siamo",
+    "about.title": "Dedicati al vostro recupero",
+    "about.desc": "Presso VOLGA Fisioterapia & Riabilitazione, combiniamo competenza professionale con cura personalizzata. Con sede a Durrës, Currila, la nostra clinica offre un ambiente accogliente dove ogni piano di trattamento è costruito su una valutazione approfondita e un impegno genuino.",
+    "about.care.title": "Cura Professionale",
+    "about.care.cred": "Pratica Basata sull'Evidenza",
+    "about.care.desc": "Il nostro team utilizza le più recenti tecniche di fisioterapia e protocolli di riabilitazione adattati a ogni paziente.",
+    "about.personal.title": "Approccio Personalizzato",
+    "about.personal.cred": "Trattamento Centrato sul Paziente",
+    "about.personal.desc": "Ogni piano di recupero è progettato intorno alle vostre esigenze, obiettivi e stile di vita.",
+    "about.schedule.title": "Orario Comodo",
+    "about.schedule.cred": "Lunedì – Sabato",
+    "about.schedule.desc": "Aperti sei giorni alla settimana dalle 09:00 alle 20:00 per adattarsi al vostro programma.",
+    "approach.label": "Il Nostro Processo",
+    "approach.title": "Un percorso ponderato verso il recupero",
+    "approach.step1.title": "Valutazione",
+    "approach.step1.desc": "Valutazione approfondita della vostra condizione, schemi di movimento e obiettivi di trattamento.",
+    "approach.step2.title": "Piano di Trattamento",
+    "approach.step2.desc": "Un percorso personalizzato che combina gli approcci terapeutici più efficaci per voi.",
+    "approach.step3.title": "Recupero Attivo",
+    "approach.step3.desc": "Trattamento manuale abbinato a esercizi guidati per ricostruire forza e mobilità.",
+    "approach.step4.title": "Benessere a Lungo Termine",
+    "approach.step4.desc": "Supporto continuo e strategie preventive per mantenervi in movimento senza dolore.",
+    "testimonials.label": "Storie dei Pazienti",
+    "testimonials.title": "Fidati da chi si è ripreso",
+    "testimonials.t1.quote": "Dopo mesi di dolore cronico alla schiena, il team mi ha dato un piano chiaro e una speranza genuina. In poche settimane mi muovevo senza dolore per la prima volta da anni.",
+    "testimonials.t1.condition": "Lombalgia cronica",
+    "testimonials.t2.quote": "Professionali, calmi e profondamente competenti. La riabilitazione del mio ginocchio è stata gestita con precisione in ogni fase. Sono tornato in campo e mi sento più forte di prima.",
+    "testimonials.t2.condition": "Recupero ricostruzione LCA",
+    "testimonials.t3.quote": "Il lavoro sulla postura è stato trasformativo. Sto seduto alla scrivania tutto il giorno e la differenza nel modo in cui mi tengo e come mi sento è notevole. Lo raccomando vivamente.",
+    "testimonials.t3.condition": "Programma di correzione posturale",
+    "booking.label": "Fai il Primo Passo",
+    "booking.title": "Il vostro recupero inizia con una conversazione",
+    "booking.desc": "Prenotate una consulenza e lasciate che il nostro team progetti un piano di trattamento intorno alle vostre esigenze, al vostro corpo e ai vostri obiettivi.",
+    "booking.cta": "Chiama +355 694 013 013",
+    "contact.visit": "Visitateci",
+    "contact.address.label": "Indirizzo",
+    "contact.address.value": "Durrës, Currila, Albania",
+    "contact.phone.label": "Telefono",
+    "contact.hours.label": "Orario",
+    "contact.hours.value": "Lun–Sab: 09:00–20:00",
+    "contact.hours.closed": "Dom: Chiuso",
+    "contact.message": "Invia un Messaggio",
+    "form.name": "Il vostro nome",
+    "form.email": "Indirizzo email",
+    "form.concern": "Raccontateci la vostra preoccupazione",
+    "form.send": "Invia Messaggio",
+    "footer.services": "Servizi",
+    "footer.about": "Chi Siamo",
+    "footer.approach": "Approccio",
+    "footer.contact": "Contatti",
+    "footer.copy": "\u00a9 2026 VOLGA Fisioterapia & Riabilitazione. Durrës, Albania."
+  },
+  ru: {
+    "page.title": "VOLGA Физиотерапия — Почувствуй Своё Тело | Дуррес, Албания",
+    "nav.services": "Услуги",
+    "nav.about": "О Нас",
+    "nav.approach": "Подход",
+    "nav.testimonials": "Отзывы",
+    "nav.contact": "Контакты",
+    "nav.book": "Записаться",
+    "hero.title": "Почувствуй своё тело <em>лучше</em>",
+    "hero.subtitle": "Профессиональная физиотерапия и реабилитация в Дурресе, Албания. Мы восстанавливаем движение, возвращаем силу и направляем вас к устойчивому выздоровлению.",
+    "hero.cta": "Начать Восстановление",
+    "hero.badge": "Дуррес, Куррила — Пн–Сб 09:00–20:00",
+    "services.label": "Наши Услуги",
+    "services.title": "Лечение, разработанное для вашего восстановления",
+    "services.manual.title": "Мануальная Терапия",
+    "services.manual.desc": "Ручные техники для восстановления подвижности суставов, снятия напряжения и улучшения функции мягких тканей.",
+    "services.sports.title": "Спортивная Реабилитация",
+    "services.sports.desc": "Структурированные программы восстановления для спортсменов любого уровня — от лечения острых травм до протоколов возвращения в спорт.",
+    "services.posture.title": "Коррекция Осанки",
+    "services.posture.desc": "Комплексная оценка осанки и программы корректирующих упражнений для устранения нарушений и предотвращения повторяющихся болей.",
+    "services.pain.title": "Управление Болью",
+    "services.pain.desc": "Доказательные подходы к хронической и острой боли, сочетающие мануальную терапию с терапевтическими упражнениями.",
+    "services.mobility.title": "Тренировка Подвижности",
+    "services.mobility.desc": "Целевые программы движений для восстановления амплитуды, улучшения гибкости и развития функциональной силы.",
+    "services.surgery.title": "Послеоперационное Восстановление",
+    "services.surgery.desc": "Управляемая реабилитация после ортопедической операции с прогрессивными протоколами, адаптированными к вашей процедуре.",
+    "about.label": "О Нас",
+    "about.title": "Преданы вашему восстановлению",
+    "about.desc": "В VOLGA Физиотерапия и Реабилитация мы сочетаем профессиональную экспертизу с персонализированным уходом. Расположенная в Дурресе, Куррила, наша клиника предоставляет гостеприимную среду, где каждый план лечения строится на тщательной оценке и искренней заботе.",
+    "about.care.title": "Профессиональный Уход",
+    "about.care.cred": "Доказательная Практика",
+    "about.care.desc": "Наша команда использует новейшие техники физиотерапии и протоколы реабилитации, адаптированные для каждого пациента.",
+    "about.personal.title": "Персональный Подход",
+    "about.personal.cred": "Пациент в Центре Внимания",
+    "about.personal.desc": "Каждый план восстановления разработан с учётом ваших потребностей, целей и образа жизни.",
+    "about.schedule.title": "Удобный График",
+    "about.schedule.cred": "Понедельник – Суббота",
+    "about.schedule.desc": "Открыты шесть дней в неделю с 09:00 до 20:00, чтобы соответствовать вашему расписанию.",
+    "approach.label": "Наш Процесс",
+    "approach.title": "Продуманный путь к восстановлению",
+    "approach.step1.title": "Оценка",
+    "approach.step1.desc": "Тщательная оценка вашего состояния, паттернов движения и целей лечения.",
+    "approach.step2.title": "План Лечения",
+    "approach.step2.desc": "Персонализированная дорожная карта, сочетающая наиболее эффективные терапевтические подходы для вас.",
+    "approach.step3.title": "Активное Восстановление",
+    "approach.step3.desc": "Ручное лечение в сочетании с направленными упражнениями для восстановления силы и подвижности.",
+    "approach.step4.title": "Долгосрочное Здоровье",
+    "approach.step4.desc": "Постоянная поддержка и профилактические стратегии для поддержания движения без боли.",
+    "testimonials.label": "Истории Пациентов",
+    "testimonials.title": "Нам доверяют те, кто восстановился",
+    "testimonials.t1.quote": "После месяцев хронической боли в спине команда дала мне чёткий план и настоящую надежду. Через несколько недель я двигался без боли впервые за годы.",
+    "testimonials.t1.condition": "Хроническая боль в пояснице",
+    "testimonials.t2.quote": "Профессиональные, спокойные и глубоко знающие. Реабилитация моего колена проводилась с точностью на каждом этапе. Я вернулся на поле и чувствую себя сильнее.",
+    "testimonials.t2.condition": "Восстановление после реконструкции ПКС",
+    "testimonials.t3.quote": "Работа над осанкой была преобразующей. Я сижу за столом весь день, и разница в том, как я держусь и как себя чувствую — замечательная. Очень рекомендую.",
+    "testimonials.t3.condition": "Программа коррекции осанки",
+    "booking.label": "Первый Шаг",
+    "booking.title": "Ваше восстановление начинается с разговора",
+    "booking.desc": "Запишитесь на консультацию, и наша команда разработает план лечения с учётом ваших потребностей, вашего тела и ваших целей.",
+    "booking.cta": "Звоните +355 694 013 013",
+    "contact.visit": "Посетите Нас",
+    "contact.address.label": "Адрес",
+    "contact.address.value": "Дуррес, Куррила, Албания",
+    "contact.phone.label": "Телефон",
+    "contact.hours.label": "Часы Работы",
+    "contact.hours.value": "Пн–Сб: 09:00–20:00",
+    "contact.hours.closed": "Вс: Закрыто",
+    "contact.message": "Отправить Сообщение",
+    "form.name": "Ваше имя",
+    "form.email": "Электронная почта",
+    "form.concern": "Расскажите о вашей проблеме",
+    "form.send": "Отправить",
+    "footer.services": "Услуги",
+    "footer.about": "О Нас",
+    "footer.approach": "Подход",
+    "footer.contact": "Контакты",
+    "footer.copy": "\u00a9 2026 VOLGA Физиотерапия и Реабилитация. Дуррес, Албания."
+  }
+};
+
+const langLabels = { sq: 'SQ', en: 'EN', it: 'IT', ru: 'RU' };
+
+function setLanguage(lang) {
+  const t = translations[lang];
+  if (!t) return;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t[el.getAttribute('data-i18n')];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    el.innerHTML = t[el.getAttribute('data-i18n-html')];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    el.placeholder = t[el.getAttribute('data-i18n-placeholder')];
+  });
+
+  document.title = t['page.title'];
+  document.documentElement.lang = lang;
+  localStorage.setItem('volga-lang', lang);
+
+  document.querySelector('.lang-current').textContent = langLabels[lang];
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+}
+
+// Init language
+const supportedLangs = ['sq', 'it', 'en', 'ru'];
+const urlLang = new URLSearchParams(location.search).get('lang');
+const savedLang = localStorage.getItem('volga-lang');
+const browserLang = navigator.language.slice(0, 2);
+const initLang = (urlLang && supportedLangs.includes(urlLang)) ? urlLang
+  : savedLang && supportedLangs.includes(savedLang) ? savedLang
+  : supportedLangs.includes(browserLang) ? browserLang
+  : 'sq';
+setLanguage(initLang);
+
+// Language switcher events
+document.querySelectorAll('.lang-option').forEach(btn => {
+  btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+});
+
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
