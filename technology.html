@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOLGA Fizioterapi — Teknologjitë Tona | Durrës, Shqipëri</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="description" content="Advanced physiotherapy technology at VOLGA clinic: Shock Wave Therapy, Human Tecar, Magnetotherapy, and Laser Therapy. Durrës, Albania.">
+<style>
+/* ---- SELF-HOSTED FONTS ---- */
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(fonts/cormorant-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(fonts/cormorant-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(fonts/cormorant-normal-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(fonts/outfit-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(fonts/outfit-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+:root {
+  --warm-white: #FAF8F5;
+  --cream: #F5F0EB;
+  --beige: #E8DFD4;
+  --stone: #B8A99A;
+  --dark: #2C2420;
+  --darker: #1A1614;
+  --gold: #C4A882;
+  --gold-light: #D4BC9A;
+  --text-primary: #2C2420;
+  --text-secondary: #7A6E64;
+  --text-light: #A89888;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-primary);
+  background: var(--warm-white);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ---- NAV ---- */
+.nav {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  padding: 24px 48px; display: flex; align-items: center; justify-content: space-between;
+  background: rgba(250,248,245,.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 30px rgba(44,36,32,.06);
+  transition: padding .4s;
+}
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500;
+  letter-spacing: .08em; color: var(--dark); text-decoration: none;
+}
+.nav-links { display: flex; align-items: center; gap: 36px; }
+.nav-links a {
+  font-size: 14px; font-weight: 400; color: var(--text-secondary);
+  text-decoration: none; letter-spacing: .04em; transition: color .3s; position: relative;
+}
+.nav-links a:hover { color: var(--dark); }
+.nav-links a:not(.nav-cta)::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px;
+  background: var(--gold); transition: width .3s ease;
+}
+.nav-links a:not(.nav-cta):hover::after { width: 100%; }
+.nav-cta {
+  background: var(--gold); color: #fff !important; padding: 10px 28px;
+  border-radius: 100px; font-weight: 500; letter-spacing: .06em;
+  transition: background .3s, transform .3s !important;
+}
+.nav-cta:hover { background: var(--dark); transform: translateY(-1px); }
+.nav-mobile { display: none; cursor: pointer; background: none; border: none; }
+.nav-mobile span { display: block; width: 24px; height: 2px; background: var(--dark); margin: 5px 0; transition: .3s; }
+
+/* ---- PAGE HERO ---- */
+.page-hero {
+  padding: 160px 48px 80px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--warm-white) 100%);
+}
+.page-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px; font-weight: 300; color: var(--dark); line-height: 1.15; margin-bottom: 20px;
+}
+.page-hero h1 em { font-style: italic; color: var(--gold); }
+.page-hero p {
+  font-size: 18px; color: var(--text-secondary); max-width: 640px; margin: 0 auto; line-height: 1.8;
+}
+.section-label {
+  font-size: 13px; font-weight: 500; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+}
+
+/* ---- MACHINE SECTIONS ---- */
+.machine {
+  padding: 100px 48px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.machine:nth-child(even) {
+  background: var(--cream);
+  max-width: 100%;
+}
+.machine:nth-child(even) .machine-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.machine-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.machine:nth-child(even) .machine-inner {
+  direction: rtl;
+}
+.machine:nth-child(even) .machine-inner > * {
+  direction: ltr;
+}
+.machine-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px; font-weight: 300; color: var(--dark); line-height: 1.15; margin-bottom: 8px;
+}
+.machine-content .machine-tag {
+  font-size: 13px; font-weight: 500; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+}
+.machine-content > p {
+  font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 28px;
+}
+.machine-benefits {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 12px;
+  margin-bottom: 28px;
+}
+.machine-benefits li {
+  font-size: 15px; color: var(--text-secondary); line-height: 1.6;
+  padding-left: 28px; position: relative;
+}
+.machine-benefits li::before {
+  content: '';
+  position: absolute; left: 0; top: 8px;
+  width: 16px; height: 16px; border-radius: 50%;
+  border: 2px solid var(--gold);
+}
+.machine-benefits.check li::before {
+  background: var(--gold); border-color: var(--gold);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 8.5l3 3 6-6'/%3E%3C/svg%3E");
+  background-size: 12px; background-position: center; background-repeat: no-repeat;
+}
+.machine-tags {
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.machine-tags span {
+  background: var(--beige); color: var(--dark); padding: 8px 20px;
+  border-radius: 100px; font-size: 13px; font-weight: 500; letter-spacing: .03em;
+}
+
+.machine-media {
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--beige);
+}
+.machine-media video {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 20px;
+}
+.machine-media .placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(145deg, var(--beige), var(--stone) 60%, var(--gold-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px; color: var(--gold); opacity: .5;
+}
+
+/* ---- CTA BANNER ---- */
+.cta-banner {
+  padding: 100px 48px;
+  background: linear-gradient(145deg, var(--dark), var(--darker));
+  text-align: center;
+}
+.cta-banner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px; font-weight: 300; color: var(--warm-white);
+  margin-bottom: 16px; line-height: 1.2;
+}
+.cta-banner p {
+  font-size: 17px; color: var(--stone); margin-bottom: 36px;
+  max-width: 500px; margin-left: auto; margin-right: auto;
+}
+.cta-banner a {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--gold); color: #fff; padding: 18px 48px;
+  border-radius: 100px; text-decoration: none; font-weight: 500; font-size: 16px;
+  letter-spacing: .04em; transition: background .3s, transform .3s;
+}
+.cta-banner a:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+/* ---- FOOTER ---- */
+footer {
+  background: var(--darker); padding: 60px 48px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+}
+footer .footer-brand {
+  font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--stone); letter-spacing: .08em;
+}
+footer .footer-links { display: flex; gap: 28px; }
+footer .footer-links a {
+  font-size: 13px; color: var(--stone); text-decoration: none; letter-spacing: .04em; transition: color .3s;
+}
+footer .footer-links a:hover { color: var(--gold); }
+footer .footer-copy {
+  font-size: 12px; color: var(--text-light); width: 100%; text-align: center;
+  margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(184,169,154,.15);
+}
+
+/* ---- ANIMATIONS ---- */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+
+/* ---- WHATSAPP ---- */
+.whatsapp-float {
+  position: fixed; bottom: 28px; right: 28px; width: 60px; height: 60px;
+  background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.4); z-index: 999; transition: transform .3s, box-shadow .3s; text-decoration: none;
+}
+.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,.5); }
+.whatsapp-float svg { width: 32px; height: 32px; fill: #fff; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+  .machine-inner { grid-template-columns: 1fr; gap: 40px; }
+  .machine:nth-child(even) .machine-inner { direction: ltr; }
+  .page-hero h1 { font-size: 42px; }
+}
+@media (max-width: 640px) {
+  .nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .nav-mobile { display: block; }
+  .page-hero { padding: 120px 24px 60px; }
+  .page-hero h1 { font-size: 34px; }
+  .machine { padding: 60px 24px; }
+  .machine-content h2 { font-size: 32px; }
+  .cta-banner { padding: 60px 24px; }
+  .cta-banner h2 { font-size: 32px; }
+  footer { padding: 40px 24px; flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">VOLGA</a>
+  <div class="nav-links">
+    <a href="index.html" data-i18n="nav.home">Kryefaqja</a>
+    <a href="index.html#services" data-i18n="nav.services">Shërbimet</a>
+    <a href="index.html#about" data-i18n="nav.about">Rreth Nesh</a>
+    <a href="index.html#contact" data-i18n="nav.contact">Kontakti</a>
+    <a href="index.html#booking" class="nav-cta" data-i18n="nav.book">Rezervo Tani</a>
+  </div>
+  <button class="nav-mobile" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="section-label reveal" data-i18n="tech.label">Teknologjia Jonë</div>
+  <h1 class="reveal" data-i18n-html="tech.title">Pajisje të <em>avancuara</em> për rikuperimin tuaj</h1>
+  <p class="reveal reveal-delay-1" data-i18n="tech.subtitle">Në klinikën VOLGA përdorim teknologjinë më moderne të fizioterapisë për rezultate të shpejta, të sigurta dhe afatgjata.</p>
+</section>
+
+<!-- SHOCK WAVE -->
+<section class="machine" id="shockwave">
+  <div class="machine-inner">
+    <div class="machine-content reveal">
+      <div class="machine-tag" data-i18n="sw.tag">Trajtim Jo-Invaziv</div>
+      <h2 data-i18n="sw.title">Terapia me Shock Wave</h2>
+      <p data-i18n="sw.desc">Zgjidhja e fuqishme jo-invazive ndaj dhimbjeve kronike dhe akute. Valët e goditjes stimulojnë rigjenerimin natyror të indeve, përmirësojnë qarkullimin e gjakut dhe reduktojnë ndjeshëm dhimbjen — pa kirurgji dhe pa medikamente.</p>
+      <ul class="machine-benefits" data-i18n-list="sw.benefits">
+        <li data-i18n="sw.b1">Dhimbje muskulore dhe tendinit</li>
+        <li data-i18n="sw.b2">Probleme të shpinës dhe qafës</li>
+        <li data-i18n="sw.b3">Fasciit plantar dhe bërryl i tenistit</li>
+        <li data-i18n="sw.b4">Kalcifikime në sup</li>
+        <li data-i18n="sw.b5">Dhimbje pas sportit ose lodhjes fizike</li>
+      </ul>
+      <div class="machine-tags">
+        <span data-i18n="tag.noninvasive">Jo-invaziv</span>
+        <span data-i18n="tag.drugfree">Pa medikamente</span>
+        <span data-i18n="tag.fast">Rezultate të shpejta</span>
+      </div>
+    </div>
+    <div class="machine-media reveal reveal-delay-1">
+      <video autoplay muted loop playsinline>
+        <source src="videos/shockwave.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- HUMAN TECAR -->
+<section class="machine" id="tecar">
+  <div class="machine-inner">
+    <div class="machine-content reveal">
+      <div class="machine-tag" data-i18n="tecar.tag">Teknologji Revolucionare</div>
+      <h2>Human Tecar</h2>
+      <p data-i18n="tecar.desc">Pajisja revolucionare Human Tecar përfaqëson teknologjinë më të avancuar në fizioterapi. Duke punuar në nivel qelizor, ajo aktivizon mekanizmat natyrorë të shërimit të trupit për rezultate të thella dhe të qëndrueshme.</p>
+      <ul class="machine-benefits check">
+        <li data-i18n="tecar.b1">Lehtëson dhimbjet muskulore dhe artikulare</li>
+        <li data-i18n="tecar.b2">Përmirëson qarkullimin e gjakut dhe shërimin natyror</li>
+        <li data-i18n="tecar.b3">Trajton inflamacionin dhe edemën</li>
+        <li data-i18n="tecar.b4">Përshpejton rikuperimin pas dëmtimeve sportive</li>
+        <li data-i18n="tecar.b5">Rrit lëvizshmërinë dhe ndihmon trupin të kthehet në formë</li>
+      </ul>
+      <div class="machine-tags">
+        <span data-i18n="tag.cellular">Nivel qelizor</span>
+        <span data-i18n="tag.deep">Trajtim i thellë</span>
+        <span data-i18n="tag.recovery">Rikuperim i shpejtë</span>
+      </div>
+    </div>
+    <div class="machine-media reveal reveal-delay-1">
+      <div class="placeholder">HT</div>
+    </div>
+  </div>
+</section>
+
+<!-- MAGNETOTHERAPY -->
+<section class="machine" id="magneto">
+  <div class="machine-inner">
+    <div class="machine-content reveal">
+      <div class="machine-tag" data-i18n="magneto.tag">Terapi me Fusha Magnetike</div>
+      <h2 data-i18n="magneto.title">Magnetoterapi</h2>
+      <p data-i18n="magneto.desc">Trajtim i avancuar me fusha magnetike që vepron thellë në inde për të lehtësuar dhimbjen, përmirësuar qarkullimin e gjakut dhe nxitur rigjenerimin e indeve. I sigurt, pa dhimbje dhe pa efekte anësore — ideal për dhimbje kronike të shpinës, qafës dhe kyçeve.</p>
+      <ul class="machine-benefits check">
+        <li data-i18n="magneto.b1">Lehtësim i menjëhershëm i dhimbjes</li>
+        <li data-i18n="magneto.b2">Përmirësim i qarkullimit të gjakut</li>
+        <li data-i18n="magneto.b3">Rigjenerim i indeve të dëmtuara</li>
+      </ul>
+      <div class="machine-tags">
+        <span data-i18n="tag.safe">I sigurt</span>
+        <span data-i18n="tag.painless">Pa dhimbje</span>
+        <span data-i18n="tag.noside">Pa efekte anësore</span>
+      </div>
+    </div>
+    <div class="machine-media reveal reveal-delay-1">
+      <div class="placeholder">MT</div>
+    </div>
+  </div>
+</section>
+
+<!-- LASER THERAPY -->
+<section class="machine" id="laser">
+  <div class="machine-inner">
+    <div class="machine-content reveal">
+      <div class="machine-tag" data-i18n="laser.tag">Teknologji Lazer</div>
+      <h2 data-i18n="laser.title">Lazer Terapeutik</h2>
+      <p data-i18n="laser.desc">Terapia me lazer ofron trajtim të saktë dhe të synuar që depërton thellë në inde për të reduktuar inflamacionin, lehtësuar dhimbjen dhe nxitur shërimin. Trajtim plotësisht i padëmshëm me rezultate të shkëlqyera për dhimbje të shpinës, gjurit dhe muskulore.</p>
+      <ul class="machine-benefits check">
+        <li data-i18n="laser.b1">Redukton inflamacionin dhe lehtëson dhimbjen</li>
+        <li data-i18n="laser.b2">Përmirëson qarkullimin për shërim më të shpejtë</li>
+        <li data-i18n="laser.b3">Pa dhimbje, pa efekte anësore — trajtim i sigurt dhe efektiv</li>
+      </ul>
+      <div class="machine-tags">
+        <span data-i18n="tag.precise">I saktë</span>
+        <span data-i18n="tag.deep">Trajtim i thellë</span>
+        <span data-i18n="tag.effective">Efektiv</span>
+      </div>
+    </div>
+    <div class="machine-media reveal reveal-delay-1">
+      <video autoplay muted loop playsinline>
+        <source src="videos/laser.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="section-label reveal" style="color:var(--gold-light);" data-i18n="cta.label">Rezervoni Sot</div>
+  <h2 class="reveal" data-i18n="cta.title">Zbuloni trajtimin e duhur për ju</h2>
+  <p class="reveal reveal-delay-1" data-i18n="cta.desc">Ekipi ynë do t'ju rekomandojë teknologjinë më të përshtatshme për gjendjen tuaj specifike.</p>
+  <a href="tel:+355694013013" class="reveal reveal-delay-2" data-i18n="cta.btn">Thirr +355 694 013 013</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">VOLGA</div>
+  <div class="footer-links">
+    <a href="index.html" data-i18n="footer.home">Kryefaqja</a>
+    <a href="index.html#services" data-i18n="footer.services">Shërbimet</a>
+    <a href="technology.html" data-i18n="footer.tech">Teknologjia</a>
+    <a href="index.html#contact" data-i18n="footer.contact">Kontakti</a>
+    <a href="https://www.instagram.com/volga_fizioterapi/" target="_blank">Instagram</a>
+  </div>
+  <div class="footer-copy" data-i18n="footer.copy">&copy; 2026 VOLGA Fizioterapi & Rehabilitim. Durrës, Shqipëri.</div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/355694013013" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.118-1.958A15.9 15.9 0 0016.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.334 22.594c-.39 1.1-2.274 2.104-3.132 2.168-.796.06-1.546.378-5.218-1.088-4.42-1.764-7.218-6.27-7.436-6.564-.218-.292-1.78-2.368-1.78-4.516s1.128-3.206 1.528-3.644c.4-.438.872-.548 1.164-.548.292 0 .584.004.838.014.272.012.636-.102.994.758.39.93 1.32 3.23 1.436 3.462.116.232.194.502.04.81-.156.31-.232.502-.464.774-.232.272-.486.608-.696.816-.232.232-.474.482-.204.944.272.462 1.206 1.988 2.59 3.222 1.778 1.584 3.278 2.074 3.74 2.306.462.232.732.194 1.002-.116.272-.31 1.158-1.352 1.468-1.816.31-.462.618-.386 1.042-.232.424.156 2.694 1.272 3.156 1.504.462.232.77.348.886.54.116.194.116 1.102-.274 2.206z"/></svg>
+</a>
+
+<script>
+const translations = {
+  sq: {
+    "page.title": "VOLGA Fizioterapi — Teknologjitë Tona | Durrës, Shqipëri",
+    "nav.home": "Kryefaqja", "nav.services": "Shërbimet", "nav.about": "Rreth Nesh",
+    "nav.contact": "Kontakti", "nav.book": "Rezervo Tani",
+    "tech.label": "Teknologjia Jonë",
+    "tech.title": "Pajisje të <em>avancuara</em> për rikuperimin tuaj",
+    "tech.subtitle": "Në klinikën VOLGA përdorim teknologjinë më moderne të fizioterapisë për rezultate të shpejta, të sigurta dhe afatgjata.",
+    "sw.tag": "Trajtim Jo-Invaziv", "sw.title": "Terapia me Shock Wave",
+    "sw.desc": "Zgjidhja e fuqishme jo-invazive ndaj dhimbjeve kronike dhe akute. Valët e goditjes stimulojnë rigjenerimin natyror të indeve, përmirësojnë qarkullimin e gjakut dhe reduktojnë ndjeshëm dhimbjen — pa kirurgji dhe pa medikamente.",
+    "sw.b1": "Dhimbje muskulore dhe tendinit", "sw.b2": "Probleme të shpinës dhe qafës",
+    "sw.b3": "Fasciit plantar dhe bërryl i tenistit", "sw.b4": "Kalcifikime në sup",
+    "sw.b5": "Dhimbje pas sportit ose lodhjes fizike",
+    "tecar.tag": "Teknologji Revolucionare",
+    "tecar.desc": "Pajisja revolucionare Human Tecar përfaqëson teknologjinë më të avancuar në fizioterapi. Duke punuar në nivel qelizor, ajo aktivizon mekanizmat natyrorë të shërimit të trupit për rezultate të thella dhe të qëndrueshme.",
+    "tecar.b1": "Lehtëson dhimbjet muskulore dhe artikulare", "tecar.b2": "Përmirëson qarkullimin e gjakut dhe shërimin natyror",
+    "tecar.b3": "Trajton inflamacionin dhe edemën", "tecar.b4": "Përshpejton rikuperimin pas dëmtimeve sportive",
+    "tecar.b5": "Rrit lëvizshmërinë dhe ndihmon trupin të kthehet në formë",
+    "magneto.tag": "Terapi me Fusha Magnetike", "magneto.title": "Magnetoterapi",
+    "magneto.desc": "Trajtim i avancuar me fusha magnetike që vepron thellë në inde për të lehtësuar dhimbjen, përmirësuar qarkullimin e gjakut dhe nxitur rigjenerimin e indeve. I sigurt, pa dhimbje dhe pa efekte anësore — ideal për dhimbje kronike të shpinës, qafës dhe kyçeve.",
+    "magneto.b1": "Lehtësim i menjëhershëm i dhimbjes", "magneto.b2": "Përmirësim i qarkullimit të gjakut",
+    "magneto.b3": "Rigjenerim i indeve të dëmtuara",
+    "laser.tag": "Teknologji Lazer", "laser.title": "Lazer Terapeutik",
+    "laser.desc": "Terapia me lazer ofron trajtim të saktë dhe të synuar që depërton thellë në inde për të reduktuar inflamacionin, lehtësuar dhimbjen dhe nxitur shërimin. Trajtim plotësisht i padëmshëm me rezultate të shkëlqyera për dhimbje të shpinës, gjurit dhe muskulore.",
+    "laser.b1": "Redukton inflamacionin dhe lehtëson dhimbjen", "laser.b2": "Përmirëson qarkullimin për shërim më të shpejtë",
+    "laser.b3": "Pa dhimbje, pa efekte anësore — trajtim i sigurt dhe efektiv",
+    "tag.noninvasive": "Jo-invaziv", "tag.drugfree": "Pa medikamente", "tag.fast": "Rezultate të shpejta",
+    "tag.cellular": "Nivel qelizor", "tag.deep": "Trajtim i thellë", "tag.recovery": "Rikuperim i shpejtë",
+    "tag.safe": "I sigurt", "tag.painless": "Pa dhimbje", "tag.noside": "Pa efekte anësore",
+    "tag.precise": "I saktë", "tag.effective": "Efektiv",
+    "cta.label": "Rezervoni Sot", "cta.title": "Zbuloni trajtimin e duhur për ju",
+    "cta.desc": "Ekipi ynë do t'ju rekomandojë teknologjinë më të përshtatshme për gjendjen tuaj specifike.",
+    "cta.btn": "Thirr +355 694 013 013",
+    "footer.home": "Kryefaqja", "footer.services": "Shërbimet", "footer.tech": "Teknologjia", "footer.contact": "Kontakti",
+    "footer.copy": "\u00a9 2026 VOLGA Fizioterapi & Rehabilitim. Durrës, Shqipëri."
+  },
+  en: {
+    "page.title": "VOLGA Physiotherapy — Our Technology | Durrës, Albania",
+    "nav.home": "Home", "nav.services": "Services", "nav.about": "About Us",
+    "nav.contact": "Contact", "nav.book": "Book Now",
+    "tech.label": "Our Technology",
+    "tech.title": "Advanced <em>equipment</em> for your recovery",
+    "tech.subtitle": "At VOLGA clinic we use the most modern physiotherapy technology for fast, safe, and lasting results.",
+    "sw.tag": "Non-Invasive Treatment", "sw.title": "Shock Wave Therapy",
+    "sw.desc": "A powerful non-invasive solution for chronic and acute pain. Shock waves stimulate natural tissue regeneration, improve blood circulation, and significantly reduce pain — without surgery or medication.",
+    "sw.b1": "Muscle pain and tendinitis", "sw.b2": "Back and neck problems",
+    "sw.b3": "Plantar fasciitis and tennis elbow", "sw.b4": "Shoulder calcifications",
+    "sw.b5": "Pain from sports or physical fatigue",
+    "tecar.tag": "Revolutionary Technology",
+    "tecar.desc": "The revolutionary Human Tecar represents the most advanced technology in physiotherapy. Working at the cellular level, it activates the body's natural healing mechanisms for deep and lasting results.",
+    "tecar.b1": "Relieves muscle and joint pain", "tecar.b2": "Improves blood circulation and natural healing",
+    "tecar.b3": "Treats inflammation and edema", "tecar.b4": "Accelerates recovery after sports injuries",
+    "tecar.b5": "Increases mobility and helps the body return to form",
+    "magneto.tag": "Magnetic Field Therapy", "magneto.title": "Magnetotherapy",
+    "magneto.desc": "Advanced magnetic field treatment that works deep within tissues to relieve pain, improve blood circulation, and promote tissue regeneration. Safe, painless, and free of side effects — ideal for chronic back, neck, and joint pain.",
+    "magneto.b1": "Immediate pain relief", "magneto.b2": "Improved blood circulation",
+    "magneto.b3": "Damaged tissue regeneration",
+    "laser.tag": "Laser Technology", "laser.title": "Therapeutic Laser",
+    "laser.desc": "Laser therapy delivers precise, targeted treatment that penetrates deep into tissues to reduce inflammation, relieve pain, and promote healing. A completely safe treatment with excellent results for back, knee, and muscle pain.",
+    "laser.b1": "Reduces inflammation and relieves pain", "laser.b2": "Improves circulation for faster healing",
+    "laser.b3": "Painless, no side effects — safe and effective treatment",
+    "tag.noninvasive": "Non-invasive", "tag.drugfree": "Drug-free", "tag.fast": "Fast results",
+    "tag.cellular": "Cellular level", "tag.deep": "Deep treatment", "tag.recovery": "Fast recovery",
+    "tag.safe": "Safe", "tag.painless": "Painless", "tag.noside": "No side effects",
+    "tag.precise": "Precise", "tag.effective": "Effective",
+    "cta.label": "Book Today", "cta.title": "Discover the right treatment for you",
+    "cta.desc": "Our team will recommend the most suitable technology for your specific condition.",
+    "cta.btn": "Call +355 694 013 013",
+    "footer.home": "Home", "footer.services": "Services", "footer.tech": "Technology", "footer.contact": "Contact",
+    "footer.copy": "\u00a9 2026 VOLGA Physiotherapy & Rehabilitation. Durrës, Albania."
+  },
+  it: {
+    "page.title": "VOLGA Fisioterapia — La Nostra Tecnologia | Durrës, Albania",
+    "nav.home": "Home", "nav.services": "Servizi", "nav.about": "Chi Siamo",
+    "nav.contact": "Contatti", "nav.book": "Prenota Ora",
+    "tech.label": "La Nostra Tecnologia",
+    "tech.title": "Attrezzature <em>avanzate</em> per il vostro recupero",
+    "tech.subtitle": "Presso la clinica VOLGA utilizziamo la tecnologia fisioterapica più moderna per risultati rapidi, sicuri e duraturi.",
+    "sw.tag": "Trattamento Non Invasivo", "sw.title": "Terapia ad Onde d'Urto",
+    "sw.desc": "Una potente soluzione non invasiva per il dolore cronico e acuto. Le onde d'urto stimolano la rigenerazione naturale dei tessuti, migliorano la circolazione sanguigna e riducono significativamente il dolore — senza chirurgia né farmaci.",
+    "sw.b1": "Dolore muscolare e tendinite", "sw.b2": "Problemi alla schiena e al collo",
+    "sw.b3": "Fascite plantare e gomito del tennista", "sw.b4": "Calcificazioni alla spalla",
+    "sw.b5": "Dolore da sport o affaticamento fisico",
+    "tecar.tag": "Tecnologia Rivoluzionaria",
+    "tecar.desc": "Il rivoluzionario Human Tecar rappresenta la tecnologia più avanzata in fisioterapia. Lavorando a livello cellulare, attiva i meccanismi naturali di guarigione del corpo per risultati profondi e duraturi.",
+    "tecar.b1": "Allevia il dolore muscolare e articolare", "tecar.b2": "Migliora la circolazione e la guarigione naturale",
+    "tecar.b3": "Tratta l'infiammazione e l'edema", "tecar.b4": "Accelera il recupero dopo infortuni sportivi",
+    "tecar.b5": "Aumenta la mobilità e aiuta il corpo a tornare in forma",
+    "magneto.tag": "Terapia a Campo Magnetico", "magneto.title": "Magnetoterapia",
+    "magneto.desc": "Trattamento avanzato a campo magnetico che agisce in profondità nei tessuti per alleviare il dolore, migliorare la circolazione sanguigna e promuovere la rigenerazione tissutale. Sicuro, indolore e privo di effetti collaterali.",
+    "magneto.b1": "Sollievo immediato dal dolore", "magneto.b2": "Miglioramento della circolazione sanguigna",
+    "magneto.b3": "Rigenerazione dei tessuti danneggiati",
+    "laser.tag": "Tecnologia Laser", "laser.title": "Laser Terapeutico",
+    "laser.desc": "La terapia laser offre un trattamento preciso e mirato che penetra in profondità nei tessuti per ridurre l'infiammazione, alleviare il dolore e promuovere la guarigione. Completamente sicuro con risultati eccellenti.",
+    "laser.b1": "Riduce l'infiammazione e allevia il dolore", "laser.b2": "Migliora la circolazione per una guarigione più rapida",
+    "laser.b3": "Indolore, senza effetti collaterali — trattamento sicuro ed efficace",
+    "tag.noninvasive": "Non invasivo", "tag.drugfree": "Senza farmaci", "tag.fast": "Risultati rapidi",
+    "tag.cellular": "Livello cellulare", "tag.deep": "Trattamento profondo", "tag.recovery": "Recupero rapido",
+    "tag.safe": "Sicuro", "tag.painless": "Indolore", "tag.noside": "Senza effetti collaterali",
+    "tag.precise": "Preciso", "tag.effective": "Efficace",
+    "cta.label": "Prenota Oggi", "cta.title": "Scoprite il trattamento giusto per voi",
+    "cta.desc": "Il nostro team vi consiglierà la tecnologia più adatta alla vostra condizione specifica.",
+    "cta.btn": "Chiama +355 694 013 013",
+    "footer.home": "Home", "footer.services": "Servizi", "footer.tech": "Tecnologia", "footer.contact": "Contatti",
+    "footer.copy": "\u00a9 2026 VOLGA Fisioterapia & Riabilitazione. Durrës, Albania."
+  },
+  ru: {
+    "page.title": "VOLGA Физиотерапия — Наши Технологии | Дуррес, Албания",
+    "nav.home": "Главная", "nav.services": "Услуги", "nav.about": "О Нас",
+    "nav.contact": "Контакты", "nav.book": "Записаться",
+    "tech.label": "Наши Технологии",
+    "tech.title": "Передовое <em>оборудование</em> для вашего восстановления",
+    "tech.subtitle": "В клинике VOLGA мы используем самые современные технологии физиотерапии для быстрых, безопасных и долгосрочных результатов.",
+    "sw.tag": "Неинвазивное Лечение", "sw.title": "Ударно-Волновая Терапия",
+    "sw.desc": "Мощное неинвазивное решение для хронической и острой боли. Ударные волны стимулируют естественную регенерацию тканей, улучшают кровообращение и значительно уменьшают боль — без хирургии и медикаментов.",
+    "sw.b1": "Мышечная боль и тендинит", "sw.b2": "Проблемы спины и шеи",
+    "sw.b3": "Подошвенный фасциит и теннисный локоть", "sw.b4": "Кальцификации плеча",
+    "sw.b5": "Боль после спорта или физической усталости",
+    "tecar.tag": "Революционная Технология",
+    "tecar.desc": "Революционный Human Tecar представляет самую передовую технологию в физиотерапии. Работая на клеточном уровне, он активирует естественные механизмы исцеления организма для глубоких и устойчивых результатов.",
+    "tecar.b1": "Снимает мышечную и суставную боль", "tecar.b2": "Улучшает кровообращение и естественное заживление",
+    "tecar.b3": "Лечит воспаление и отёки", "tecar.b4": "Ускоряет восстановление после спортивных травм",
+    "tecar.b5": "Увеличивает подвижность и помогает телу вернуться в форму",
+    "magneto.tag": "Магнитная Терапия", "magneto.title": "Магнитотерапия",
+    "magneto.desc": "Передовое лечение магнитными полями, действующее глубоко в тканях для облегчения боли, улучшения кровообращения и стимулирования регенерации тканей. Безопасно, безболезненно и без побочных эффектов.",
+    "magneto.b1": "Немедленное облегчение боли", "magneto.b2": "Улучшение кровообращения",
+    "magneto.b3": "Регенерация повреждённых тканей",
+    "laser.tag": "Лазерная Технология", "laser.title": "Терапевтический Лазер",
+    "laser.desc": "Лазерная терапия обеспечивает точное, целенаправленное лечение, проникающее глубоко в ткани для уменьшения воспаления, облегчения боли и стимулирования заживления. Полностью безопасное лечение с отличными результатами.",
+    "laser.b1": "Уменьшает воспаление и облегчает боль", "laser.b2": "Улучшает кровообращение для быстрого заживления",
+    "laser.b3": "Безболезненно, без побочных эффектов — безопасное и эффективное лечение",
+    "tag.noninvasive": "Неинвазивно", "tag.drugfree": "Без медикаментов", "tag.fast": "Быстрые результаты",
+    "tag.cellular": "Клеточный уровень", "tag.deep": "Глубокое лечение", "tag.recovery": "Быстрое восстановление",
+    "tag.safe": "Безопасно", "tag.painless": "Безболезненно", "tag.noside": "Без побочных эффектов",
+    "tag.precise": "Точно", "tag.effective": "Эффективно",
+    "cta.label": "Запишитесь Сегодня", "cta.title": "Откройте подходящее лечение для вас",
+    "cta.desc": "Наша команда порекомендует наиболее подходящую технологию для вашего конкретного состояния.",
+    "cta.btn": "Звоните +355 694 013 013",
+    "footer.home": "Главная", "footer.services": "Услуги", "footer.tech": "Технологии", "footer.contact": "Контакты",
+    "footer.copy": "\u00a9 2026 VOLGA Физиотерапия и Реабилитация. Дуррес, Албания."
+  }
+};
+
+const langLabels = { sq: 'SQ', en: 'EN', it: 'IT', ru: 'RU' };
+
+function setLanguage(lang) {
+  const t = translations[lang];
+  if (!t) return;
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t[el.getAttribute('data-i18n')]; });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t[el.getAttribute('data-i18n-html')]; });
+  document.title = t['page.title'];
+  document.documentElement.lang = lang;
+  localStorage.setItem('volga-lang', lang);
+}
+
+const supportedLangs = ['sq', 'it', 'en', 'ru'];
+const urlLang = new URLSearchParams(location.search).get('lang');
+const savedLang = localStorage.getItem('volga-lang');
+const browserLang = navigator.language.slice(0, 2);
+const initLang = (urlLang && supportedLangs.includes(urlLang)) ? urlLang
+  : savedLang && supportedLangs.includes(savedLang) ? savedLang
+  : supportedLangs.includes(browserLang) ? browserLang : 'sq';
+setLanguage(initLang);
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

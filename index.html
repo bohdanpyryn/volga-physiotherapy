@@ -4,9 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VOLGA Fizioterapi — Ndije Trupin në Maksimumin e Tij | Durrës, Shqipëri</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="description" content="VOLGA Physiotherapy & Rehabilitation in Durrës, Albania. Professional physiotherapy, sports rehabilitation, pain management, and postural correction. Mon–Sat 09:00–20:00. Call +355 694 013 013.">
+<meta property="og:title" content="VOLGA Fizioterapi — Feel Your Body Best">
+<meta property="og:description" content="Professional physiotherapy and rehabilitation in Durrës, Currila, Albania. Restore movement, rebuild strength, recover with confidence.">
+<meta property="og:image" content="logo-hero.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.instagram.com/volga_fizioterapi/">
+<meta property="og:locale" content="sq_AL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="AL-DR">
+<meta name="geo.placename" content="Durrës">
 <style>
+/* ---- SELF-HOSTED FONTS ---- */
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300 400; font-display: swap; src: url(fonts/cormorant-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300 400; font-display: swap; src: url(fonts/cormorant-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300 400; font-display: swap; src: url(fonts/cormorant-italic-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(fonts/cormorant-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(fonts/cormorant-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(fonts/cormorant-normal-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(fonts/outfit-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Outfit'; font-style: normal; font-weight: 300 600; font-display: swap; src: url(fonts/outfit-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
 :root {
   --warm-white: #FAF8F5;
   --cream: #F5F0EB;
@@ -205,13 +228,6 @@ body {
   border-radius: 20px;
   position: relative;
 }
-.hero-image-inner::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  border-radius: 20px;
-}
 .hero-badge {
   position: absolute;
   bottom: 32px;
@@ -316,7 +332,7 @@ body {
 .about-image {
   height: 600px;
   border-radius: 20px;
-  background: linear-gradient(160deg, var(--beige), var(--stone));
+  background: url(doctor.jpg) center/cover no-repeat;
   position: relative;
 }
 .about-image::before {
@@ -449,16 +465,18 @@ body {
   transition: transform .4s ease;
 }
 .testimonial-card:hover { transform: translateY(-4px); }
-.quote-mark {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 80px;
-  line-height: 1;
-  color: var(--gold);
-  opacity: .4;
-  margin-bottom: -16px;
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+}
+.testimonial-stars svg {
+  width: 18px;
+  height: 18px;
+  fill: #F5A623;
 }
 .testimonial-card blockquote {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text-primary);
   line-height: 1.8;
   font-style: italic;
@@ -468,11 +486,6 @@ body {
   font-weight: 500;
   font-size: 15px;
   color: var(--dark);
-}
-.testimonial-condition {
-  font-size: 13px;
-  color: var(--text-light);
-  margin-top: 4px;
 }
 
 /* ---- BOOKING CTA ---- */
@@ -633,6 +646,277 @@ footer .footer-copy {
   footer { padding: 40px 24px; flex-direction: column; text-align: center; }
   .lang-switcher { order: -1; }
 }
+
+/* ---- MICROINTERACTIONS ---- */
+.service-card {
+  transition: transform .4s cubic-bezier(.25,.46,.45,.94), box-shadow .4s cubic-bezier(.25,.46,.45,.94), background .3s;
+}
+.service-card:hover {
+  background: var(--warm-white);
+}
+.service-icon {
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1), background .3s;
+}
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(-3deg);
+  background: var(--gold-light);
+}
+.service-card:hover .service-icon::after {
+  border-color: var(--dark);
+}
+.hero-cta {
+  position: relative;
+  overflow: hidden;
+}
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width .6s, height .6s;
+}
+.hero-cta:hover::before {
+  width: 300px;
+  height: 300px;
+}
+.step {
+  transition: transform .4s ease;
+}
+.step:hover {
+  transform: translateY(-4px);
+}
+.step:hover .step-num {
+  background: var(--gold);
+  color: #fff;
+  transition: background .3s, color .3s;
+}
+.testimonial-card {
+  transition: transform .4s cubic-bezier(.25,.46,.45,.94), box-shadow .4s;
+}
+.testimonial-card:hover {
+  box-shadow: 0 16px 48px rgba(44,36,32,.1);
+}
+.specialist {
+  transition: background .3s, padding .3s;
+  border-radius: 12px;
+}
+.specialist:hover {
+  background: var(--cream);
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.nav-links a {
+  position: relative;
+}
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--gold);
+  transition: width .3s ease;
+}
+.nav-links a:not(.nav-cta):hover::after {
+  width: 100%;
+}
+
+/* ---- INSTAGRAM SECTION ---- */
+.instagram {
+  padding: 100px 48px;
+  background: var(--cream);
+  text-align: center;
+}
+.instagram-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.instagram-card {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.instagram-card-bg {
+  width: 100%;
+  height: 100%;
+  transition: transform .5s cubic-bezier(.25,.46,.45,.94);
+}
+.instagram-card:hover .instagram-card-bg {
+  transform: scale(1.08);
+}
+.instagram-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(44,36,32,.0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .3s;
+}
+.instagram-card:hover .instagram-card-overlay {
+  background: rgba(44,36,32,.4);
+}
+.instagram-card-overlay svg {
+  width: 32px;
+  height: 32px;
+  fill: #fff;
+  opacity: 0;
+  transform: scale(.8);
+  transition: opacity .3s, transform .3s;
+}
+.instagram-card:hover .instagram-card-overlay svg {
+  opacity: 1;
+  transform: scale(1);
+}
+.instagram-follow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  background: var(--dark);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: .04em;
+  transition: background .3s, transform .3s;
+}
+.instagram-follow:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+}
+.instagram-follow svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+@media (max-width: 1024px) {
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .instagram { padding-left: 24px; padding-right: 24px; }
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+/* ---- WHATSAPP FLOAT ---- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.4);
+  z-index: 999;
+  transition: transform .3s, box-shadow .3s;
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,.5);
+}
+.whatsapp-float svg { width: 32px; height: 32px; fill: #fff; }
+
+/* ---- MOBILE MENU ---- */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: var(--warm-white);
+  z-index: 1001;
+  padding: 80px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: right .35s ease;
+  box-shadow: -4px 0 30px rgba(44,36,32,.1);
+}
+.mobile-menu.open { right: 0; }
+.mobile-menu a {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--beige);
+  transition: color .3s;
+}
+.mobile-menu a:hover { color: var(--dark); }
+.mobile-menu a.nav-cta {
+  display: inline-block;
+  text-align: center;
+  margin-top: 12px;
+  border-bottom: none;
+  color: #fff;
+}
+.mobile-menu-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-menu-close svg { width: 20px; height: 20px; stroke: var(--dark); }
+.mobile-lang {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--beige);
+}
+.mobile-lang button {
+  flex: 1;
+  padding: 10px;
+  border: 1.5px solid var(--beige);
+  border-radius: 8px;
+  background: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color .3s, color .3s, background .3s;
+}
+.mobile-lang button:hover { border-color: var(--gold); color: var(--dark); }
+.mobile-lang button.active { background: var(--gold); color: #fff; border-color: var(--gold); }
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,22,20,.4);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s, visibility .35s;
+}
+.mobile-overlay.open { opacity: 1; visibility: visible; }
 </style>
 </head>
 <body>
@@ -646,6 +930,7 @@ footer .footer-copy {
     <a href="#approach" data-i18n="nav.approach">Procesi</a>
     <a href="#testimonials" data-i18n="nav.testimonials">Dëshmitë</a>
     <a href="#contact" data-i18n="nav.contact">Kontakti</a>
+    <a href="technology.html" data-i18n="nav.tech">Teknologjia</a>
     <div class="lang-switcher">
       <button class="lang-current" aria-label="Change language">SQ</button>
       <div class="lang-dropdown">
@@ -674,7 +959,6 @@ footer .footer-copy {
   </div>
   <div class="hero-image reveal reveal-delay-1">
     <div class="hero-image-inner"></div>
-    <div class="hero-badge" data-i18n="hero.badge">Durrës, Currila — Hën–Sht 09:00–20:00</div>
   </div>
 </section>
 
@@ -716,35 +1000,27 @@ footer .footer-copy {
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT / DOCTOR -->
 <section class="about" id="about">
   <div class="about-image reveal"></div>
   <div class="about-content">
-    <div class="section-label reveal" data-i18n="about.label">Rreth Nesh</div>
-    <h2 class="section-title reveal" data-i18n="about.title">Të përkushtuar ndaj rikuperimit tuaj</h2>
-    <p class="reveal" data-i18n="about.desc">Në VOLGA Fizioterapi & Rehabilitim, kombinojmë ekspertizën profesionale me kujdesin e personalizuar. E vendosur në Durrës, Currila, klinika jonë ofron një mjedis mikpritës ku çdo plan trajtimi ndërtohet mbi vlerësim të plotë dhe përkushtim të vërtetë.</p>
-    <div class="specialist reveal reveal-delay-1">
+    <div class="section-label reveal" data-i18n="about.label">Themeluesja & Drejtuese Klinike</div>
+    <h2 class="section-title reveal">Dr. Viktorija Xharra</h2>
+    <div class="cred reveal" style="margin-bottom:24px;font-size:15px;" data-i18n="doctor.role">Pedagoge & Specialiste Fizioterapie</div>
+    <p class="reveal" data-i18n="doctor.bio">Me përvojë të gjerë në fushën e fizioterapisë, Dr. Viktorija Xharra është një nga emrat më të respektuar në trajtimin fizik dhe rehabilitimin. Ajo u diplomua në Universitetin e Bolonjës, një nga universitetet më prestigjioze në Evropë, si dhe në Universitetin "Zoja e Këshillit të Mirë", ku sot shërben edhe si pedagoge.</p>
+    <p class="reveal reveal-delay-1" data-i18n="doctor.bio2" style="margin-top:16px;">Përkushtimi ndaj pacientëve, profesionalizmi dhe njohuritë e thella shkencore e bëjnë atë një figurë të rëndësishme në botën moderne të fizioterapisë. Dr. Xharra i kushton rëndësi qasjes njerëzore dhe trajtimeve të personalizuara, duke ndihmuar çdo pacient të rikthejë ekuilibrin dhe lëvizshmërinë e trupit në mënyrë të sigurt dhe efikase.</p>
+    <div class="specialist reveal reveal-delay-2" style="margin-top:32px;">
       <div class="specialist-avatar"></div>
       <div>
-        <h4 data-i18n="about.care.title">Kujdes Profesional</h4>
-        <div class="cred" data-i18n="about.care.cred">Praktikë e Bazuar në Evidencë</div>
-        <p data-i18n="about.care.desc">Ekipi ynë përdor teknikat më të fundit të fizioterapisë dhe protokollet e rehabilitimit të përshtatura për çdo pacient.</p>
-      </div>
-    </div>
-    <div class="specialist reveal reveal-delay-2">
-      <div class="specialist-avatar"></div>
-      <div>
-        <h4 data-i18n="about.personal.title">Qasje e Personalizuar</h4>
-        <div class="cred" data-i18n="about.personal.cred">Trajtim i Përqendruar te Pacienti</div>
-        <p data-i18n="about.personal.desc">Çdo plan rikuperimi është dizenjuar rreth nevojave, qëllimeve dhe stilit tuaj të jetesës.</p>
+        <h4 data-i18n="doctor.edu1.title">Universiteti i Bolonjës</h4>
+        <div class="cred" data-i18n="doctor.edu1.cred">Itali — Diplomë në Fizioterapi</div>
       </div>
     </div>
     <div class="specialist reveal reveal-delay-3">
       <div class="specialist-avatar"></div>
       <div>
-        <h4 data-i18n="about.schedule.title">Orar i Përshtatshëm</h4>
-        <div class="cred" data-i18n="about.schedule.cred">E Hënë – E Shtunë</div>
-        <p data-i18n="about.schedule.desc">Hapur gjashtë ditë në javë nga 09:00 deri në 20:00 për t'u përshtatur me orarin tuaj.</p>
+        <h4 data-i18n="doctor.edu2.title">Universiteti "Zoja e Këshillit të Mirë"</h4>
+        <div class="cred" data-i18n="doctor.edu2.cred">Pedagoge & Kërkuese</div>
       </div>
     </div>
   </div>
@@ -782,27 +1058,54 @@ footer .footer-copy {
 
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
-  <div class="section-label reveal" data-i18n="testimonials.label">Histori Pacientësh</div>
-  <h2 class="section-title reveal" data-i18n="testimonials.title">Të besuar nga ata që janë rikuperuar</h2>
+  <div class="section-label reveal" data-i18n="testimonials.label">Vlerësime</div>
+  <h2 class="section-title reveal" data-i18n="testimonials.title">Çfarë thonë pacientët tanë</h2>
   <div class="testimonials-grid">
     <div class="testimonial-card reveal reveal-delay-1">
-      <div class="quote-mark">&ldquo;</div>
-      <blockquote data-i18n="testimonials.t1.quote">Pas muajsh dhimbje kronike në shpinë, ekipi më dha një plan të qartë dhe shpresë të vërtetë. Brenda javësh po lëvizja pa dhimbje për herë të parë pas vitesh.</blockquote>
-      <div class="testimonial-author">Arta M.</div>
-      <div class="testimonial-condition" data-i18n="testimonials.t1.condition">Dhimbje kronike e mesit</div>
+      <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      <blockquote data-i18n="testimonials.t1.quote">I have struggled with back pain for many years and after a stressful period with traveling on top of that, I was in desperate need of some relief. Two treatments at this place and I feel like a changed person, and my back are still good days after treatment. They were so helpful, kind, professional and really know what they are doing. I did the massage and a treatment with the Human Tecar. Highly recommend this place if you find yourself in Durres.</blockquote>
+      <div class="testimonial-author">Embla</div>
     </div>
     <div class="testimonial-card reveal reveal-delay-2">
-      <div class="quote-mark">&ldquo;</div>
-      <blockquote data-i18n="testimonials.t2.quote">Profesionalë, të qetë dhe shumë të ditur. Rehabilitimi im i gjurit u trajtua me saktësi në çdo fazë. Jam kthyer në fushë dhe ndihem më i fortë se më parë.</blockquote>
-      <div class="testimonial-author">Erion S.</div>
-      <div class="testimonial-condition" data-i18n="testimonials.t2.condition">Rikuperim nga rindërtimi i ACL</div>
+      <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      <blockquote data-i18n="testimonials.t2.quote">I had a back pain that was hurting me for years and i found solution only in this clinic. The staff is very professional and brave which made me felt very comfortable. After several sessions i noticed great results! The pain went away. I really recommend this clinic to everyone its a life changer!!!</blockquote>
+      <div class="testimonial-author">M. Kurti</div>
     </div>
     <div class="testimonial-card reveal reveal-delay-3">
-      <div class="quote-mark">&ldquo;</div>
-      <blockquote data-i18n="testimonials.t3.quote">Puna me posturën ka qenë transformuese. Ulem në tavolinë gjithë ditën dhe ndryshimi në mënyrën si mbahem dhe si ndihem është i jashtëzakonshëm. E rekomandoj shumë.</blockquote>
-      <div class="testimonial-author">Elira V.</div>
-      <div class="testimonial-condition" data-i18n="testimonials.t3.condition">Program korrigjimi postural</div>
+      <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      <blockquote data-i18n="testimonials.t3.quote">Volga Physiotherapy clinic is an excellent example of professionalism and special care for patients. The environment is warm and clean, and the staff is always ready to provide support and treatment with great dedication. Achieving positive results and improving the health of patients is always priority, and this makes clinic a trusted and preferred place.</blockquote>
+      <div class="testimonial-author">E.D</div>
     </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="instagram">
+  <div class="instagram-inner">
+    <div class="section-label reveal" data-i18n="instagram.label">Na Ndiqni</div>
+    <h2 class="section-title reveal" style="max-width:100%;text-align:center;margin-left:auto;margin-right:auto;" data-i18n="instagram.title">@volga_fizioterapi</h2>
+    <div class="instagram-grid">
+      <a href="https://www.instagram.com/volga_fizioterapi/" target="_blank" class="instagram-card reveal reveal-delay-1">
+        <div class="instagram-card-bg" style="background:linear-gradient(135deg,#D4BC9A,#B8A99A);"></div>
+        <div class="instagram-card-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+      </a>
+      <a href="https://www.instagram.com/volga_fizioterapi/" target="_blank" class="instagram-card reveal reveal-delay-2">
+        <div class="instagram-card-bg" style="background:linear-gradient(135deg,#E8DFD4,#C4A882);"></div>
+        <div class="instagram-card-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+      </a>
+      <a href="https://www.instagram.com/volga_fizioterapi/" target="_blank" class="instagram-card reveal reveal-delay-3">
+        <div class="instagram-card-bg" style="background:linear-gradient(135deg,#B8A99A,#7A6E64);"></div>
+        <div class="instagram-card-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+      </a>
+      <a href="https://www.instagram.com/volga_fizioterapi/" target="_blank" class="instagram-card reveal reveal-delay-4">
+        <div class="instagram-card-bg" style="background:linear-gradient(135deg,#C4A882,#E8DFD4);"></div>
+        <div class="instagram-card-overlay"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+      </a>
+    </div>
+    <a href="https://www.instagram.com/volga_fizioterapi/" target="_blank" class="instagram-follow reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      <span data-i18n="instagram.follow">Na ndiqni në Instagram</span>
+    </a>
   </div>
 </section>
 
@@ -845,10 +1148,36 @@ footer .footer-copy {
     <a href="#about" data-i18n="footer.about">Rreth Nesh</a>
     <a href="#approach" data-i18n="footer.approach">Procesi</a>
     <a href="#contact" data-i18n="footer.contact">Kontakti</a>
+    <a href="technology.html" data-i18n="footer.tech">Teknologjia</a>
     <a href="https://www.instagram.com/volga_fizioterapi/" target="_blank">Instagram</a>
   </div>
   <div class="footer-copy" data-i18n="footer.copy">&copy; 2026 VOLGA Fizioterapi & Rehabilitim. Durrës, Shqipëri.</div>
 </footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/355694013013" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.118-1.958A15.9 15.9 0 0016.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.334 22.594c-.39 1.1-2.274 2.104-3.132 2.168-.796.06-1.546.378-5.218-1.088-4.42-1.764-7.218-6.27-7.436-6.564-.218-.292-1.78-2.368-1.78-4.516s1.128-3.206 1.528-3.644c.4-.438.872-.548 1.164-.548.292 0 .584.004.838.014.272.012.636-.102.994.758.39.93 1.32 3.23 1.436 3.462.116.232.194.502.04.81-.156.31-.232.502-.464.774-.232.272-.486.608-.696.816-.232.232-.474.482-.204.944.272.462 1.206 1.988 2.59 3.222 1.778 1.584 3.278 2.074 3.74 2.306.462.232.732.194 1.002-.116.272-.31 1.158-1.352 1.468-1.816.31-.462.618-.386 1.042-.232.424.156 2.694 1.272 3.156 1.504.462.232.77.348.886.54.116.194.116 1.102-.274 2.206z"/></svg>
+</a>
+
+<!-- MOBILE MENU -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="#services" data-i18n="nav.services">Shërbimet</a>
+  <a href="#about" data-i18n="nav.about">Rreth Nesh</a>
+  <a href="#approach" data-i18n="nav.approach">Procesi</a>
+  <a href="#testimonials" data-i18n="nav.testimonials">Dëshmitë</a>
+  <a href="#contact" data-i18n="nav.contact">Kontakti</a>
+  <a href="#booking" class="nav-cta" data-i18n="nav.book">Rezervo Tani</a>
+  <div class="mobile-lang">
+    <button class="mobile-lang-btn active" data-lang="sq">SQ</button>
+    <button class="mobile-lang-btn" data-lang="it">IT</button>
+    <button class="mobile-lang-btn" data-lang="en">EN</button>
+    <button class="mobile-lang-btn" data-lang="ru">RU</button>
+  </div>
+</div>
 
 <script>
 const translations = {
@@ -860,6 +1189,8 @@ const translations = {
     "nav.testimonials": "Dëshmitë",
     "nav.contact": "Kontakti",
     "nav.book": "Rezervo Tani",
+    "nav.tech": "Teknologjia",
+    "footer.tech": "Teknologjia",
     "hero.title": "Ndije trupin në <em>maksimumin</em> e tij",
     "hero.subtitle": "Fizioterapi dhe rehabilitim profesional në Durrës, Shqipëri. Rikthejmë lëvizjen, rindërtojmë forcën dhe ju udhëheqim drejt shërimit të qëndrueshëm.",
     "hero.cta": "Fillo Rikuperimin",
@@ -878,18 +1209,14 @@ const translations = {
     "services.mobility.desc": "Programe lëvizjesh të synuara për rikthimin e amplitudës së lëvizjes, përmirësimin e fleksibilitetit dhe ndërtimin e forcës funksionale.",
     "services.surgery.title": "Rikuperim Pas-Operativ",
     "services.surgery.desc": "Rehabilitim i udhëhequr pas kirurgjisë ortopedike, me protokolle progresive të përshtatura për procedurën tuaj.",
-    "about.label": "Rreth Nesh",
-    "about.title": "Të përkushtuar ndaj rikuperimit tuaj",
-    "about.desc": "Në VOLGA Fizioterapi & Rehabilitim, kombinojmë ekspertizën profesionale me kujdesin e personalizuar. E vendosur në Durrës, Currila, klinika jonë ofron një mjedis mikpritës ku çdo plan trajtimi ndërtohet mbi vlerësim të plotë dhe përkushtim të vërtetë.",
-    "about.care.title": "Kujdes Profesional",
-    "about.care.cred": "Praktikë e Bazuar në Evidencë",
-    "about.care.desc": "Ekipi ynë përdor teknikat më të fundit të fizioterapisë dhe protokollet e rehabilitimit të përshtatura për çdo pacient.",
-    "about.personal.title": "Qasje e Personalizuar",
-    "about.personal.cred": "Trajtim i Përqendruar te Pacienti",
-    "about.personal.desc": "Çdo plan rikuperimi është dizenjuar rreth nevojave, qëllimeve dhe stilit tuaj të jetesës.",
-    "about.schedule.title": "Orar i Përshtatshëm",
-    "about.schedule.cred": "E Hënë – E Shtunë",
-    "about.schedule.desc": "Hapur gjashtë ditë në javë nga 09:00 deri në 20:00 për t'u përshtatur me orarin tuaj.",
+    "about.label": "Themeluesja & Drejtuese Klinike",
+    "doctor.role": "Pedagoge & Specialiste Fizioterapie",
+    "doctor.bio": "Me përvojë të gjerë në fushën e fizioterapisë, Dr. Viktorija Xharra është një nga emrat më të respektuar në trajtimin fizik dhe rehabilitimin. Ajo u diplomua në Universitetin e Bolonjës, një nga universitetet më prestigjioze në Evropë, si dhe në Universitetin \"Zoja e Këshillit të Mirë\", ku sot shërben edhe si pedagoge.",
+    "doctor.bio2": "Përkushtimi ndaj pacientëve, profesionalizmi dhe njohuritë e thella shkencore e bëjnë atë një figurë të rëndësishme në botën moderne të fizioterapisë. Dr. Xharra i kushton rëndësi qasjes njerëzore dhe trajtimeve të personalizuara, duke ndihmuar çdo pacient të rikthejë ekuilibrin dhe lëvizshmërinë e trupit në mënyrë të sigurt dhe efikase.",
+    "doctor.edu1.title": "Universiteti i Bolonjës",
+    "doctor.edu1.cred": "Itali — Diplomë në Fizioterapi",
+    "doctor.edu2.title": "Universiteti \"Zoja e Këshillit të Mirë\"",
+    "doctor.edu2.cred": "Pedagoge & Kërkuese",
     "approach.label": "Procesi Ynë",
     "approach.title": "Një rrugë e menduar drejt rikuperimit",
     "approach.step1.title": "Vlerësimi",
@@ -900,14 +1227,11 @@ const translations = {
     "approach.step3.desc": "Trajtim praktik i shoqëruar me ushtrime të udhëhequra për rindërtimin e forcës dhe lëvizshmërisë.",
     "approach.step4.title": "Mirëqenie Afatgjatë",
     "approach.step4.desc": "Mbështetje e vazhdueshme dhe strategji parandaluese për t'ju mbajtur në lëvizje pa dhimbje.",
-    "testimonials.label": "Histori Pacientësh",
-    "testimonials.title": "Të besuar nga ata që janë rikuperuar",
-    "testimonials.t1.quote": "Pas muajsh dhimbje kronike në shpinë, ekipi më dha një plan të qartë dhe shpresë të vërtetë. Brenda javësh po lëvizja pa dhimbje për herë të parë pas vitesh.",
-    "testimonials.t1.condition": "Dhimbje kronike e mesit",
-    "testimonials.t2.quote": "Profesionalë, të qetë dhe shumë të ditur. Rehabilitimi im i gjurit u trajtua me saktësi në çdo fazë. Jam kthyer në fushë dhe ndihem më i fortë se më parë.",
-    "testimonials.t2.condition": "Rikuperim nga rindërtimi i ACL",
-    "testimonials.t3.quote": "Puna me posturën ka qenë transformuese. Ulem në tavolinë gjithë ditën dhe ndryshimi në mënyrën si mbahem dhe si ndihem është i jashtëzakonshëm. E rekomandoj shumë.",
-    "testimonials.t3.condition": "Program korrigjimi postural",
+    "testimonials.label": "Vlerësime",
+    "testimonials.title": "Çfarë thonë pacientët tanë",
+    "testimonials.t1.quote": "I have struggled with back pain for many years and after a stressful period with traveling on top of that, I was in desperate need of some relief. Two treatments at this place and I feel like a changed person, and my back are still good days after treatment. They were so helpful, kind, professional and really know what they are doing. I did the massage and a treatment with the Human Tecar. Highly recommend this place if you find yourself in Durres.",
+    "testimonials.t2.quote": "I had a back pain that was hurting me for years and i found solution only in this clinic. The staff is very professional and brave which made me felt very comfortable. After several sessions i noticed great results! The pain went away. I really recommend this clinic to everyone its a life changer!!!",
+    "testimonials.t3.quote": "Volga Physiotherapy clinic is an excellent example of professionalism and special care for patients. The environment is warm and clean, and the staff is always ready to provide support and treatment with great dedication. Achieving positive results and improving the health of patients is always priority, and this makes clinic a trusted and preferred place.",
     "booking.label": "Hapi i Parë",
     "booking.title": "Rikuperimi juaj fillon me një bisedë",
     "booking.desc": "Rezervoni një konsultë dhe lini ekipin tonë të dizenjojë një plan trajtimi rreth nevojave, trupit dhe qëllimeve tuaja.",
@@ -928,7 +1252,10 @@ const translations = {
     "footer.about": "Rreth Nesh",
     "footer.approach": "Procesi",
     "footer.contact": "Kontakti",
-    "footer.copy": "\u00a9 2026 VOLGA Fizioterapi & Rehabilitim. Durrës, Shqipëri."
+    "footer.copy": "\u00a9 2026 VOLGA Fizioterapi & Rehabilitim. Durrës, Shqipëri.",
+    "instagram.label": "Na Ndiqni",
+    "instagram.title": "@volga_fizioterapi",
+    "instagram.follow": "Na ndiqni në Instagram"
   },
   en: {
     "page.title": "VOLGA Physiotherapy — Feel Your Body Best | Durrës, Albania",
@@ -938,6 +1265,8 @@ const translations = {
     "nav.testimonials": "Testimonials",
     "nav.contact": "Contact",
     "nav.book": "Book Now",
+    "nav.tech": "Technology",
+    "footer.tech": "Technology",
     "hero.title": "Feel your body <em>best</em>",
     "hero.subtitle": "Professional physiotherapy and rehabilitation in Durrës, Albania. We restore movement, rebuild strength, and guide your path to lasting recovery.",
     "hero.cta": "Begin Your Recovery",
@@ -956,18 +1285,14 @@ const translations = {
     "services.mobility.desc": "Targeted movement programs to restore range of motion, improve flexibility, and build functional strength for daily life.",
     "services.surgery.title": "Post-Surgical Recovery",
     "services.surgery.desc": "Guided rehabilitation following orthopaedic surgery, with progressive protocols tailored to your procedure and healing timeline.",
-    "about.label": "About Us",
-    "about.title": "Dedicated to your recovery",
-    "about.desc": "At VOLGA Physiotherapy & Rehabilitation, we combine professional expertise with personalised care. Based in Durrës, Currila, our clinic provides a welcoming environment where every treatment plan is built on thorough assessment and genuine commitment to your wellbeing.",
-    "about.care.title": "Professional Care",
-    "about.care.cred": "Evidence-based Practice",
-    "about.care.desc": "Our team uses the latest physiotherapy techniques and rehabilitation protocols tailored to each patient.",
-    "about.personal.title": "Personalised Approach",
-    "about.personal.cred": "Patient-centred Treatment",
-    "about.personal.desc": "Every recovery plan is designed around your specific needs, goals, and lifestyle.",
-    "about.schedule.title": "Convenient Schedule",
-    "about.schedule.cred": "Monday – Saturday",
-    "about.schedule.desc": "Open six days a week from 09:00 to 20:00 to fit your schedule.",
+    "about.label": "Founder & Clinic Director",
+    "doctor.role": "Lecturer & Physiotherapy Specialist",
+    "doctor.bio": "With extensive experience in the field of physiotherapy, Dr. Viktorija Xharra is one of the most respected names in physical treatment and rehabilitation. She graduated from the University of Bologna, one of the most prestigious universities in Europe, as well as from the University of Our Lady of Good Council, where today she also serves as a lecturer.",
+    "doctor.bio2": "Her dedication to patients, professionalism, and deep scientific knowledge make her an important figure in the modern world of physiotherapy. Dr. Xharra places importance on the human approach and personalized treatments, helping each patient restore balance and body mobility safely and efficiently.",
+    "doctor.edu1.title": "University of Bologna",
+    "doctor.edu1.cred": "Italy — Physiotherapy Degree",
+    "doctor.edu2.title": "University of Our Lady of Good Council",
+    "doctor.edu2.cred": "Lecturer & Researcher",
     "approach.label": "Our Process",
     "approach.title": "A considered path to recovery",
     "approach.step1.title": "Assessment",
@@ -978,14 +1303,11 @@ const translations = {
     "approach.step3.desc": "Hands-on treatment paired with guided exercises to rebuild strength and mobility.",
     "approach.step4.title": "Long-term Wellness",
     "approach.step4.desc": "Ongoing support and preventive strategies to keep you moving pain-free.",
-    "testimonials.label": "Patient Stories",
-    "testimonials.title": "Trusted by those who've recovered",
-    "testimonials.t1.quote": "After months of chronic back pain, the team gave me a clear plan and genuine hope. Within weeks I was moving without pain for the first time in years.",
-    "testimonials.t1.condition": "Chronic lower back pain",
-    "testimonials.t2.quote": "Professional, calm, and deeply knowledgeable. My knee rehabilitation was handled with precision at every stage. I'm back on the pitch and feeling stronger than before.",
-    "testimonials.t2.condition": "ACL reconstruction recovery",
-    "testimonials.t3.quote": "The posture work has been transformative. I sit at a desk all day and the difference in how I carry myself and how I feel is remarkable. Highly recommend.",
-    "testimonials.t3.condition": "Postural correction program",
+    "testimonials.label": "Reviews",
+    "testimonials.title": "What our patients say",
+    "testimonials.t1.quote": "I have struggled with back pain for many years and after a stressful period with traveling on top of that, I was in desperate need of some relief. Two treatments at this place and I feel like a changed person, and my back are still good days after treatment. They were so helpful, kind, professional and really know what they are doing. I did the massage and a treatment with the Human Tecar. Highly recommend this place if you find yourself in Durres.",
+    "testimonials.t2.quote": "I had a back pain that was hurting me for years and i found solution only in this clinic. The staff is very professional and brave which made me felt very comfortable. After several sessions i noticed great results! The pain went away. I really recommend this clinic to everyone its a life changer!!!",
+    "testimonials.t3.quote": "Volga Physiotherapy clinic is an excellent example of professionalism and special care for patients. The environment is warm and clean, and the staff is always ready to provide support and treatment with great dedication. Achieving positive results and improving the health of patients is always priority, and this makes clinic a trusted and preferred place.",
     "booking.label": "Take the First Step",
     "booking.title": "Your recovery begins with a conversation",
     "booking.desc": "Book a consultation and let our team design a treatment plan around your needs, your body, and your goals.",
@@ -1006,7 +1328,10 @@ const translations = {
     "footer.about": "About",
     "footer.approach": "Approach",
     "footer.contact": "Contact",
-    "footer.copy": "\u00a9 2026 VOLGA Physiotherapy & Rehabilitation. Durrës, Albania."
+    "footer.copy": "\u00a9 2026 VOLGA Physiotherapy & Rehabilitation. Durrës, Albania.",
+    "instagram.label": "Follow Us",
+    "instagram.title": "@volga_fizioterapi",
+    "instagram.follow": "Follow us on Instagram"
   },
   it: {
     "page.title": "VOLGA Fisioterapia — Senti il Tuo Corpo al Meglio | Durrës, Albania",
@@ -1016,6 +1341,8 @@ const translations = {
     "nav.testimonials": "Testimonianze",
     "nav.contact": "Contatti",
     "nav.book": "Prenota Ora",
+    "nav.tech": "Tecnologia",
+    "footer.tech": "Tecnologia",
     "hero.title": "Senti il tuo corpo al <em>meglio</em>",
     "hero.subtitle": "Fisioterapia e riabilitazione professionale a Durrës, Albania. Ripristiniamo il movimento, ricostruiamo la forza e vi guidiamo verso un recupero duraturo.",
     "hero.cta": "Inizia il Recupero",
@@ -1034,18 +1361,14 @@ const translations = {
     "services.mobility.desc": "Programmi di movimento mirati per ripristinare l'ampiezza di movimento, migliorare la flessibilità e costruire forza funzionale.",
     "services.surgery.title": "Recupero Post-Chirurgico",
     "services.surgery.desc": "Riabilitazione guidata dopo chirurgia ortopedica, con protocolli progressivi adattati alla vostra procedura e tempistica di guarigione.",
-    "about.label": "Chi Siamo",
-    "about.title": "Dedicati al vostro recupero",
-    "about.desc": "Presso VOLGA Fisioterapia & Riabilitazione, combiniamo competenza professionale con cura personalizzata. Con sede a Durrës, Currila, la nostra clinica offre un ambiente accogliente dove ogni piano di trattamento è costruito su una valutazione approfondita e un impegno genuino.",
-    "about.care.title": "Cura Professionale",
-    "about.care.cred": "Pratica Basata sull'Evidenza",
-    "about.care.desc": "Il nostro team utilizza le più recenti tecniche di fisioterapia e protocolli di riabilitazione adattati a ogni paziente.",
-    "about.personal.title": "Approccio Personalizzato",
-    "about.personal.cred": "Trattamento Centrato sul Paziente",
-    "about.personal.desc": "Ogni piano di recupero è progettato intorno alle vostre esigenze, obiettivi e stile di vita.",
-    "about.schedule.title": "Orario Comodo",
-    "about.schedule.cred": "Lunedì – Sabato",
-    "about.schedule.desc": "Aperti sei giorni alla settimana dalle 09:00 alle 20:00 per adattarsi al vostro programma.",
+    "about.label": "Fondatrice & Direttrice Clinica",
+    "doctor.role": "Docente & Specialista in Fisioterapia",
+    "doctor.bio": "Con una vasta esperienza nel campo della fisioterapia, la Dr.ssa Viktorija Xharra è uno dei nomi più rispettati nel trattamento fisico e nella riabilitazione. Si è laureata presso l'Università di Bologna, una delle università più prestigiose d'Europa, e presso l'Università Nostra Signora del Buon Consiglio, dove oggi è anche docente.",
+    "doctor.bio2": "La sua dedizione ai pazienti, la professionalità e le profonde conoscenze scientifiche la rendono una figura importante nel mondo moderno della fisioterapia. La Dr.ssa Xharra pone importanza sull'approccio umano e sui trattamenti personalizzati, aiutando ogni paziente a ripristinare l'equilibrio e la mobilità corporea in modo sicuro ed efficiente.",
+    "doctor.edu1.title": "Università di Bologna",
+    "doctor.edu1.cred": "Italia — Laurea in Fisioterapia",
+    "doctor.edu2.title": "Università Nostra Signora del Buon Consiglio",
+    "doctor.edu2.cred": "Docente & Ricercatrice",
     "approach.label": "Il Nostro Processo",
     "approach.title": "Un percorso ponderato verso il recupero",
     "approach.step1.title": "Valutazione",
@@ -1056,14 +1379,11 @@ const translations = {
     "approach.step3.desc": "Trattamento manuale abbinato a esercizi guidati per ricostruire forza e mobilità.",
     "approach.step4.title": "Benessere a Lungo Termine",
     "approach.step4.desc": "Supporto continuo e strategie preventive per mantenervi in movimento senza dolore.",
-    "testimonials.label": "Storie dei Pazienti",
-    "testimonials.title": "Fidati da chi si è ripreso",
-    "testimonials.t1.quote": "Dopo mesi di dolore cronico alla schiena, il team mi ha dato un piano chiaro e una speranza genuina. In poche settimane mi muovevo senza dolore per la prima volta da anni.",
-    "testimonials.t1.condition": "Lombalgia cronica",
-    "testimonials.t2.quote": "Professionali, calmi e profondamente competenti. La riabilitazione del mio ginocchio è stata gestita con precisione in ogni fase. Sono tornato in campo e mi sento più forte di prima.",
-    "testimonials.t2.condition": "Recupero ricostruzione LCA",
-    "testimonials.t3.quote": "Il lavoro sulla postura è stato trasformativo. Sto seduto alla scrivania tutto il giorno e la differenza nel modo in cui mi tengo e come mi sento è notevole. Lo raccomando vivamente.",
-    "testimonials.t3.condition": "Programma di correzione posturale",
+    "testimonials.label": "Recensioni",
+    "testimonials.title": "Cosa dicono i nostri pazienti",
+    "testimonials.t1.quote": "I have struggled with back pain for many years and after a stressful period with traveling on top of that, I was in desperate need of some relief. Two treatments at this place and I feel like a changed person, and my back are still good days after treatment. They were so helpful, kind, professional and really know what they are doing. I did the massage and a treatment with the Human Tecar. Highly recommend this place if you find yourself in Durres.",
+    "testimonials.t2.quote": "I had a back pain that was hurting me for years and i found solution only in this clinic. The staff is very professional and brave which made me felt very comfortable. After several sessions i noticed great results! The pain went away. I really recommend this clinic to everyone its a life changer!!!",
+    "testimonials.t3.quote": "Volga Physiotherapy clinic is an excellent example of professionalism and special care for patients. The environment is warm and clean, and the staff is always ready to provide support and treatment with great dedication. Achieving positive results and improving the health of patients is always priority, and this makes clinic a trusted and preferred place.",
     "booking.label": "Fai il Primo Passo",
     "booking.title": "Il vostro recupero inizia con una conversazione",
     "booking.desc": "Prenotate una consulenza e lasciate che il nostro team progetti un piano di trattamento intorno alle vostre esigenze, al vostro corpo e ai vostri obiettivi.",
@@ -1084,7 +1404,10 @@ const translations = {
     "footer.about": "Chi Siamo",
     "footer.approach": "Approccio",
     "footer.contact": "Contatti",
-    "footer.copy": "\u00a9 2026 VOLGA Fisioterapia & Riabilitazione. Durrës, Albania."
+    "footer.copy": "\u00a9 2026 VOLGA Fisioterapia & Riabilitazione. Durrës, Albania.",
+    "instagram.label": "Seguici",
+    "instagram.title": "@volga_fizioterapi",
+    "instagram.follow": "Seguici su Instagram"
   },
   ru: {
     "page.title": "VOLGA Физиотерапия — Почувствуй Своё Тело | Дуррес, Албания",
@@ -1094,6 +1417,8 @@ const translations = {
     "nav.testimonials": "Отзывы",
     "nav.contact": "Контакты",
     "nav.book": "Записаться",
+    "nav.tech": "Технологии",
+    "footer.tech": "Технологии",
     "hero.title": "Почувствуй своё тело <em>лучше</em>",
     "hero.subtitle": "Профессиональная физиотерапия и реабилитация в Дурресе, Албания. Мы восстанавливаем движение, возвращаем силу и направляем вас к устойчивому выздоровлению.",
     "hero.cta": "Начать Восстановление",
@@ -1112,18 +1437,14 @@ const translations = {
     "services.mobility.desc": "Целевые программы движений для восстановления амплитуды, улучшения гибкости и развития функциональной силы.",
     "services.surgery.title": "Послеоперационное Восстановление",
     "services.surgery.desc": "Управляемая реабилитация после ортопедической операции с прогрессивными протоколами, адаптированными к вашей процедуре.",
-    "about.label": "О Нас",
-    "about.title": "Преданы вашему восстановлению",
-    "about.desc": "В VOLGA Физиотерапия и Реабилитация мы сочетаем профессиональную экспертизу с персонализированным уходом. Расположенная в Дурресе, Куррила, наша клиника предоставляет гостеприимную среду, где каждый план лечения строится на тщательной оценке и искренней заботе.",
-    "about.care.title": "Профессиональный Уход",
-    "about.care.cred": "Доказательная Практика",
-    "about.care.desc": "Наша команда использует новейшие техники физиотерапии и протоколы реабилитации, адаптированные для каждого пациента.",
-    "about.personal.title": "Персональный Подход",
-    "about.personal.cred": "Пациент в Центре Внимания",
-    "about.personal.desc": "Каждый план восстановления разработан с учётом ваших потребностей, целей и образа жизни.",
-    "about.schedule.title": "Удобный График",
-    "about.schedule.cred": "Понедельник – Суббота",
-    "about.schedule.desc": "Открыты шесть дней в неделю с 09:00 до 20:00, чтобы соответствовать вашему расписанию.",
+    "about.label": "Основатель и Директор Клиники",
+    "doctor.role": "Преподаватель и Специалист по Физиотерапии",
+    "doctor.bio": "Обладая обширным опытом в области физиотерапии, Dr. Виктория Джарра является одним из самых уважаемых специалистов в области физического лечения и реабилитации. Она окончила Болонский университет, один из самых престижных университетов Европы, а также Университет Богоматери Доброго Совета, где сегодня также преподаёт.",
+    "doctor.bio2": "Её преданность пациентам, профессионализм и глубокие научные знания делают её важной фигурой в современном мире физиотерапии. Dr. Джарра придаёт значение человечному подходу и персонализированному лечению, помогая каждому пациенту восстановить баланс и подвижность тела безопасно и эффективно.",
+    "doctor.edu1.title": "Болонский Университет",
+    "doctor.edu1.cred": "Италия — Диплом по Физиотерапии",
+    "doctor.edu2.title": "Университет Богоматери Доброго Совета",
+    "doctor.edu2.cred": "Преподаватель и Исследователь",
     "approach.label": "Наш Процесс",
     "approach.title": "Продуманный путь к восстановлению",
     "approach.step1.title": "Оценка",
@@ -1134,14 +1455,11 @@ const translations = {
     "approach.step3.desc": "Ручное лечение в сочетании с направленными упражнениями для восстановления силы и подвижности.",
     "approach.step4.title": "Долгосрочное Здоровье",
     "approach.step4.desc": "Постоянная поддержка и профилактические стратегии для поддержания движения без боли.",
-    "testimonials.label": "Истории Пациентов",
-    "testimonials.title": "Нам доверяют те, кто восстановился",
-    "testimonials.t1.quote": "После месяцев хронической боли в спине команда дала мне чёткий план и настоящую надежду. Через несколько недель я двигался без боли впервые за годы.",
-    "testimonials.t1.condition": "Хроническая боль в пояснице",
-    "testimonials.t2.quote": "Профессиональные, спокойные и глубоко знающие. Реабилитация моего колена проводилась с точностью на каждом этапе. Я вернулся на поле и чувствую себя сильнее.",
-    "testimonials.t2.condition": "Восстановление после реконструкции ПКС",
-    "testimonials.t3.quote": "Работа над осанкой была преобразующей. Я сижу за столом весь день, и разница в том, как я держусь и как себя чувствую — замечательная. Очень рекомендую.",
-    "testimonials.t3.condition": "Программа коррекции осанки",
+    "testimonials.label": "Отзывы",
+    "testimonials.title": "Что говорят наши пациенты",
+    "testimonials.t1.quote": "I have struggled with back pain for many years and after a stressful period with traveling on top of that, I was in desperate need of some relief. Two treatments at this place and I feel like a changed person, and my back are still good days after treatment. They were so helpful, kind, professional and really know what they are doing. I did the massage and a treatment with the Human Tecar. Highly recommend this place if you find yourself in Durres.",
+    "testimonials.t2.quote": "I had a back pain that was hurting me for years and i found solution only in this clinic. The staff is very professional and brave which made me felt very comfortable. After several sessions i noticed great results! The pain went away. I really recommend this clinic to everyone its a life changer!!!",
+    "testimonials.t3.quote": "Volga Physiotherapy clinic is an excellent example of professionalism and special care for patients. The environment is warm and clean, and the staff is always ready to provide support and treatment with great dedication. Achieving positive results and improving the health of patients is always priority, and this makes clinic a trusted and preferred place.",
     "booking.label": "Первый Шаг",
     "booking.title": "Ваше восстановление начинается с разговора",
     "booking.desc": "Запишитесь на консультацию, и наша команда разработает план лечения с учётом ваших потребностей, вашего тела и ваших целей.",
@@ -1162,7 +1480,10 @@ const translations = {
     "footer.about": "О Нас",
     "footer.approach": "Подход",
     "footer.contact": "Контакты",
-    "footer.copy": "\u00a9 2026 VOLGA Физиотерапия и Реабилитация. Дуррес, Албания."
+    "footer.copy": "\u00a9 2026 VOLGA Физиотерапия и Реабилитация. Дуррес, Албания.",
+    "instagram.label": "Подписывайтесь",
+    "instagram.title": "@volga_fizioterapi",
+    "instagram.follow": "Подписаться в Instagram"
   }
 };
 
@@ -1190,6 +1511,9 @@ function setLanguage(lang) {
   document.querySelectorAll('.lang-option').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
+  document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
 }
 
 // Init language
@@ -1206,6 +1530,32 @@ setLanguage(initLang);
 // Language switcher events
 document.querySelectorAll('.lang-option').forEach(btn => {
   btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+});
+document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+});
+
+// Mobile menu
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobileClose = document.getElementById('mobileClose');
+const mobileToggle = document.querySelector('.nav-mobile');
+
+function openMobileMenu() {
+  mobileMenu.classList.add('open');
+  mobileOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  mobileOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+mobileToggle.addEventListener('click', openMobileMenu);
+mobileClose.addEventListener('click', closeMobileMenu);
+mobileOverlay.addEventListener('click', closeMobileMenu);
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
 });
 
 // Scroll reveal
