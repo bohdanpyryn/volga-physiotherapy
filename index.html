@@ -215,31 +215,150 @@ body {
 .hero-cta:hover { background: var(--gold); transform: translateY(-2px); }
 .hero-cta svg { width: 16px; height: 16px; transition: transform .3s; }
 .hero-cta:hover svg { transform: translateX(4px); }
-.hero-image {
+/* ---- RELIEF JOURNEY ---- */
+.relief-journey {
   position: relative;
+  border-radius: 24px;
+  padding: 48px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 580px;
-  border-radius: 20px;
+  transition: background 1.2s ease;
   overflow: hidden;
 }
-.hero-image-inner {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(145deg, var(--beige), var(--stone) 60%, var(--gold-light));
-  border-radius: 20px;
+.relief-orb {
   position: relative;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 1.2s, box-shadow 1.2s, transform 1.2s;
 }
-.hero-badge {
+.relief-orb::before {
+  content: '';
   position: absolute;
-  bottom: 32px;
-  left: 32px;
-  background: rgba(255,255,255,.85);
-  backdrop-filter: blur(10px);
-  padding: 16px 24px;
-  border-radius: 14px;
-  font-size: 13px;
-  color: var(--dark);
+  inset: -16px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  border-color: inherit;
+  opacity: .2;
+  transition: opacity 1.2s;
+}
+.relief-orb::after {
+  content: '';
+  position: absolute;
+  inset: -32px;
+  border-radius: 50%;
+  border: 1px solid;
+  border-color: inherit;
+  opacity: .08;
+  transition: opacity 1.2s;
+}
+.relief-icon {
+  font-size: 64px;
+  transition: transform .8s cubic-bezier(.34,1.56,.64,1);
+  user-select: none;
+  line-height: 1;
+}
+.relief-text {
+  text-align: center;
+  margin-bottom: 20px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.relief-stage {
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: .03em;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  transition: color 1s;
+}
+.relief-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  transition: color 1s, opacity .6s;
+  line-height: 1.3;
+}
+.relief-sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  transition: color 1s, opacity .6s;
+  letter-spacing: .02em;
+}
+.relief-progress {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.relief-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--beige);
+  transition: background .6s, transform .4s;
+}
+.relief-dot.active {
+  background: var(--gold);
+  transform: scale(1.3);
+}
+.relief-dot.past {
+  background: var(--gold-light);
+}
+
+/* ---- STATS COUNTER ---- */
+.stats {
+  padding: 80px 48px;
+  background: var(--cream);
+}
+.stats-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.stat {
+  padding: 20px;
+}
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-number .stat-suffix {
+  font-size: 32px;
+}
+.stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: .04em;
+}
+@media (max-width: 1024px) {
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .relief-journey { height: auto; min-height: 400px; padding: 36px 24px; }
+  .relief-orb { width: 130px; height: 130px; }
+  .relief-icon { font-size: 48px; }
+  .relief-headline { font-size: 22px; }
+  .stats { padding: 60px 24px; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .stat-number { font-size: 42px; }
 }
 
 /* ---- SERVICES ---- */
@@ -622,7 +741,7 @@ footer .footer-copy {
 /* ---- RESPONSIVE ---- */
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 120px; }
-  .hero-image { height: 400px; }
+  .relief-journey { height: 460px; }
   .hero-text h1 { font-size: 50px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .about { grid-template-columns: 1fr; gap: 40px; }
@@ -957,8 +1076,20 @@ footer .footer-copy {
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
     </a>
   </div>
-  <div class="hero-image reveal reveal-delay-1">
-    <div class="hero-image-inner"></div>
+  <div class="relief-journey reveal reveal-delay-1" id="reliefJourney">
+    <div class="relief-orb" id="reliefOrb">
+      <div class="relief-icon" id="reliefIcon">😣</div>
+    </div>
+    <div class="relief-text">
+      <div class="relief-stage" id="reliefStage"></div>
+      <div class="relief-headline" id="reliefHeadline"></div>
+      <div class="relief-sub" id="reliefSub"></div>
+    </div>
+    <div class="relief-progress" id="reliefProgress">
+      <div class="relief-dot active"></div>
+      <div class="relief-dot"></div>
+      <div class="relief-dot"></div>
+    </div>
   </div>
 </section>
 
@@ -996,6 +1127,28 @@ footer .footer-copy {
       <div class="service-icon icon-6"></div>
       <h3 data-i18n="services.surgery.title">Rikuperim Pas-Operativ</h3>
       <p data-i18n="services.surgery.desc">Rehabilitim i udhëhequr pas kirurgjisë ortopedike, me protokolle progresive të përshtatura për procedurën tuaj.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat reveal">
+      <div class="stat-number"><span data-count="500">0</span><span class="stat-suffix">+</span></div>
+      <div class="stat-label" data-i18n="stats.patients">Pacientë të trajtuar</div>
+    </div>
+    <div class="stat reveal reveal-delay-1">
+      <div class="stat-number"><span data-count="4.9">0</span><span class="stat-suffix">★</span></div>
+      <div class="stat-label" data-i18n="stats.rating">Vlerësim në Google</div>
+    </div>
+    <div class="stat reveal reveal-delay-2">
+      <div class="stat-number"><span data-count="6">0</span></div>
+      <div class="stat-label" data-i18n="stats.machines">Pajisje të avancuara</div>
+    </div>
+    <div class="stat reveal reveal-delay-3">
+      <div class="stat-number"><span data-count="6">0</span><span class="stat-suffix">/7</span></div>
+      <div class="stat-label" data-i18n="stats.days">Ditë në javë</div>
     </div>
   </div>
 </section>
@@ -1063,17 +1216,17 @@ footer .footer-copy {
   <div class="testimonials-grid">
     <div class="testimonial-card reveal reveal-delay-1">
       <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <blockquote data-i18n="testimonials.t1.quote">I have struggled with back pain for many years and after a stressful period with traveling on top of that, I was in desperate need of some relief. Two treatments at this place and I feel like a changed person, and my back are still good days after treatment. They were so helpful, kind, professional and really know what they are doing. I did the massage and a treatment with the Human Tecar. Highly recommend this place if you find yourself in Durres.</blockquote>
+      <blockquote data-i18n="testimonials.t1.quote">Kam vuajtur nga dhimbjet e shpinës për shumë vite dhe pas një periudhe stresuese me udhëtime, kisha nevojë të dëshpëruar për lehtësim. Dy trajtime në këtë vend dhe ndihem si person i ndryshuar, shpina ime është ende mirë ditë pas trajtimit. Ishin shumë të dobishëm, të sjellshëm, profesionalë dhe vërtet e dinë çfarë bëjnë. Bëra masazhin dhe një trajtim me Human Tecar. E rekomandoj shumë nëse gjendeni në Durrës.</blockquote>
       <div class="testimonial-author">Embla</div>
     </div>
     <div class="testimonial-card reveal reveal-delay-2">
       <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <blockquote data-i18n="testimonials.t2.quote">I had a back pain that was hurting me for years and i found solution only in this clinic. The staff is very professional and brave which made me felt very comfortable. After several sessions i noticed great results! The pain went away. I really recommend this clinic to everyone its a life changer!!!</blockquote>
+      <blockquote data-i18n="testimonials.t2.quote">Kisha dhimbje shpine që më mundonte prej vitesh dhe gjeta zgjidhjen vetëm në këtë klinikë. Stafi është shumë profesional dhe i guximshëm, çka më bëri të ndihesha shumë rehat. Pas disa seancave vura re rezultate të shkëlqyera! Dhimbja u zhduk. E rekomandoj vërtet këtë klinikë për të gjithë, është një ndryshim jete!!!</blockquote>
       <div class="testimonial-author">M. Kurti</div>
     </div>
     <div class="testimonial-card reveal reveal-delay-3">
       <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-      <blockquote data-i18n="testimonials.t3.quote">Volga Physiotherapy clinic is an excellent example of professionalism and special care for patients. The environment is warm and clean, and the staff is always ready to provide support and treatment with great dedication. Achieving positive results and improving the health of patients is always priority, and this makes clinic a trusted and preferred place.</blockquote>
+      <blockquote data-i18n="testimonials.t3.quote">Klinika Volga Fizioterapi është një shembull i shkëlqyer i profesionalizmit dhe kujdesit të veçantë për pacientët. Ambienti është i ngrohtë dhe i pastër, dhe stafi është gjithmonë gati për të ofruar mbështetje dhe trajtim me përkushtim të madh. Arritja e rezultateve pozitive dhe përmirësimi i shëndetit të pacientëve është gjithmonë prioritet, dhe kjo e bën klinikën një vend të besuar dhe të preferuar.</blockquote>
       <div class="testimonial-author">E.D</div>
     </div>
   </div>
@@ -1194,6 +1347,10 @@ const translations = {
     "hero.title": "Ndije trupin në <em>maksimumin</em> e tij",
     "hero.subtitle": "Fizioterapi dhe rehabilitim profesional në Durrës, Shqipëri. Rikthejmë lëvizjen, rindërtojmë forcën dhe ju udhëheqim drejt shërimit të qëndrueshëm.",
     "hero.cta": "Fillo Rikuperimin",
+    "stats.patients": "Pacientë të trajtuar",
+    "stats.rating": "Vlerësim në Google",
+    "stats.machines": "Pajisje të avancuara",
+    "stats.days": "Ditë në javë",
     "hero.badge": "Durrës, Currila — Hën–Sht 09:00–20:00",
     "services.label": "Çfarë Ofrojmë",
     "services.title": "Trajtime të dizenjuara rreth rikuperimit tuaj",
@@ -1229,9 +1386,9 @@ const translations = {
     "approach.step4.desc": "Mbështetje e vazhdueshme dhe strategji parandaluese për t'ju mbajtur në lëvizje pa dhimbje.",
     "testimonials.label": "Vlerësime",
     "testimonials.title": "Çfarë thonë pacientët tanë",
-    "testimonials.t1.quote": "I have struggled with back pain for many years and after a stressful period with traveling on top of that, I was in desperate need of some relief. Two treatments at this place and I feel like a changed person, and my back are still good days after treatment. They were so helpful, kind, professional and really know what they are doing. I did the massage and a treatment with the Human Tecar. Highly recommend this place if you find yourself in Durres.",
-    "testimonials.t2.quote": "I had a back pain that was hurting me for years and i found solution only in this clinic. The staff is very professional and brave which made me felt very comfortable. After several sessions i noticed great results! The pain went away. I really recommend this clinic to everyone its a life changer!!!",
-    "testimonials.t3.quote": "Volga Physiotherapy clinic is an excellent example of professionalism and special care for patients. The environment is warm and clean, and the staff is always ready to provide support and treatment with great dedication. Achieving positive results and improving the health of patients is always priority, and this makes clinic a trusted and preferred place.",
+    "testimonials.t1.quote": "Kam vuajtur nga dhimbjet e shpinës për shumë vite dhe pas një periudhe stresuese me udhëtime, kisha nevojë të dëshpëruar për lehtësim. Dy trajtime në këtë vend dhe ndihem si person i ndryshuar, shpina ime është ende mirë ditë pas trajtimit. Ishin shumë të dobishëm, të sjellshëm, profesionalë dhe vërtet e dinë çfarë bëjnë. Bëra masazhin dhe një trajtim me Human Tecar. E rekomandoj shumë nëse gjendeni në Durrës.",
+    "testimonials.t2.quote": "Kisha dhimbje shpine që më mundonte prej vitesh dhe gjeta zgjidhjen vetëm në këtë klinikë. Stafi është shumë profesional dhe i guximshëm, çka më bëri të ndihesha shumë rehat. Pas disa seancave vura re rezultate të shkëlqyera! Dhimbja u zhduk. E rekomandoj vërtet këtë klinikë për të gjithë, është një ndryshim jete!!!",
+    "testimonials.t3.quote": "Klinika Volga Fizioterapi është një shembull i shkëlqyer i profesionalizmit dhe kujdesit të veçantë për pacientët. Ambienti është i ngrohtë dhe i pastër, dhe stafi është gjithmonë gati për të ofruar mbështetje dhe trajtim me përkushtim të madh. Arritja e rezultateve pozitive dhe përmirësimi i shëndetit të pacientëve është gjithmonë prioritet, dhe kjo e bën klinikën një vend të besuar dhe të preferuar.",
     "booking.label": "Hapi i Parë",
     "booking.title": "Rikuperimi juaj fillon me një bisedë",
     "booking.desc": "Rezervoni një konsultë dhe lini ekipin tonë të dizenjojë një plan trajtimi rreth nevojave, trupit dhe qëllimeve tuaja.",
@@ -1270,6 +1427,10 @@ const translations = {
     "hero.title": "Feel your body <em>best</em>",
     "hero.subtitle": "Professional physiotherapy and rehabilitation in Durrës, Albania. We restore movement, rebuild strength, and guide your path to lasting recovery.",
     "hero.cta": "Begin Your Recovery",
+    "stats.patients": "Patients treated",
+    "stats.rating": "Google rating",
+    "stats.machines": "Advanced machines",
+    "stats.days": "Days per week",
     "hero.badge": "Durrës, Currila — Mon–Sat 09:00–20:00",
     "services.label": "What We Offer",
     "services.title": "Treatments designed around your recovery",
@@ -1346,6 +1507,10 @@ const translations = {
     "hero.title": "Senti il tuo corpo al <em>meglio</em>",
     "hero.subtitle": "Fisioterapia e riabilitazione professionale a Durrës, Albania. Ripristiniamo il movimento, ricostruiamo la forza e vi guidiamo verso un recupero duraturo.",
     "hero.cta": "Inizia il Recupero",
+    "stats.patients": "Pazienti trattati",
+    "stats.rating": "Valutazione Google",
+    "stats.machines": "Macchinari avanzati",
+    "stats.days": "Giorni a settimana",
     "hero.badge": "Durrës, Currila — Lun–Sab 09:00–20:00",
     "services.label": "Cosa Offriamo",
     "services.title": "Trattamenti progettati intorno al vostro recupero",
@@ -1381,9 +1546,9 @@ const translations = {
     "approach.step4.desc": "Supporto continuo e strategie preventive per mantenervi in movimento senza dolore.",
     "testimonials.label": "Recensioni",
     "testimonials.title": "Cosa dicono i nostri pazienti",
-    "testimonials.t1.quote": "I have struggled with back pain for many years and after a stressful period with traveling on top of that, I was in desperate need of some relief. Two treatments at this place and I feel like a changed person, and my back are still good days after treatment. They were so helpful, kind, professional and really know what they are doing. I did the massage and a treatment with the Human Tecar. Highly recommend this place if you find yourself in Durres.",
-    "testimonials.t2.quote": "I had a back pain that was hurting me for years and i found solution only in this clinic. The staff is very professional and brave which made me felt very comfortable. After several sessions i noticed great results! The pain went away. I really recommend this clinic to everyone its a life changer!!!",
-    "testimonials.t3.quote": "Volga Physiotherapy clinic is an excellent example of professionalism and special care for patients. The environment is warm and clean, and the staff is always ready to provide support and treatment with great dedication. Achieving positive results and improving the health of patients is always priority, and this makes clinic a trusted and preferred place.",
+    "testimonials.t1.quote": "Ho sofferto di mal di schiena per molti anni e dopo un periodo stressante con viaggi in più, avevo disperatamente bisogno di sollievo. Due trattamenti in questo posto e mi sento una persona cambiata, la mia schiena sta ancora bene giorni dopo il trattamento. Sono stati così disponibili, gentili, professionali e sanno davvero quello che fanno. Ho fatto il massaggio e un trattamento con lo Human Tecar. Consiglio vivamente questo posto se vi trovate a Durres.",
+    "testimonials.t2.quote": "Avevo un mal di schiena che mi tormentava da anni e ho trovato la soluzione solo in questa clinica. Il personale è molto professionale e coraggioso, il che mi ha fatto sentire molto a mio agio. Dopo diverse sedute ho notato grandi risultati! Il dolore è scomparso. Raccomando davvero questa clinica a tutti, è un cambia-vita!!!",
+    "testimonials.t3.quote": "La clinica Volga Fisioterapia è un esempio eccellente di professionalità e cura speciale per i pazienti. L'ambiente è caldo e pulito, e il personale è sempre pronto a fornire supporto e trattamento con grande dedizione. Raggiungere risultati positivi e migliorare la salute dei pazienti è sempre la priorità, e questo rende la clinica un luogo fidato e preferito.",
     "booking.label": "Fai il Primo Passo",
     "booking.title": "Il vostro recupero inizia con una conversazione",
     "booking.desc": "Prenotate una consulenza e lasciate che il nostro team progetti un piano di trattamento intorno alle vostre esigenze, al vostro corpo e ai vostri obiettivi.",
@@ -1422,6 +1587,10 @@ const translations = {
     "hero.title": "Почувствуй своё тело <em>лучше</em>",
     "hero.subtitle": "Профессиональная физиотерапия и реабилитация в Дурресе, Албания. Мы восстанавливаем движение, возвращаем силу и направляем вас к устойчивому выздоровлению.",
     "hero.cta": "Начать Восстановление",
+    "stats.patients": "Пациентов вылечено",
+    "stats.rating": "Рейтинг Google",
+    "stats.machines": "Современных аппаратов",
+    "stats.days": "Дней в неделю",
     "hero.badge": "Дуррес, Куррила — Пн–Сб 09:00–20:00",
     "services.label": "Наши Услуги",
     "services.title": "Лечение, разработанное для вашего восстановления",
@@ -1457,9 +1626,9 @@ const translations = {
     "approach.step4.desc": "Постоянная поддержка и профилактические стратегии для поддержания движения без боли.",
     "testimonials.label": "Отзывы",
     "testimonials.title": "Что говорят наши пациенты",
-    "testimonials.t1.quote": "I have struggled with back pain for many years and after a stressful period with traveling on top of that, I was in desperate need of some relief. Two treatments at this place and I feel like a changed person, and my back are still good days after treatment. They were so helpful, kind, professional and really know what they are doing. I did the massage and a treatment with the Human Tecar. Highly recommend this place if you find yourself in Durres.",
-    "testimonials.t2.quote": "I had a back pain that was hurting me for years and i found solution only in this clinic. The staff is very professional and brave which made me felt very comfortable. After several sessions i noticed great results! The pain went away. I really recommend this clinic to everyone its a life changer!!!",
-    "testimonials.t3.quote": "Volga Physiotherapy clinic is an excellent example of professionalism and special care for patients. The environment is warm and clean, and the staff is always ready to provide support and treatment with great dedication. Achieving positive results and improving the health of patients is always priority, and this makes clinic a trusted and preferred place.",
+    "testimonials.t1.quote": "Я страдала от боли в спине много лет, и после стрессового периода с поездками мне отчаянно нужно было облегчение. Два сеанса в этом месте — и я чувствую себя другим человеком, спина до сих пор в порядке спустя дни после лечения. Они были очень отзывчивыми, добрыми, профессиональными и действительно знают своё дело. Я делала массаж и процедуру с Human Tecar. Очень рекомендую это место, если вы окажетесь в Дурресе.",
+    "testimonials.t2.quote": "У меня была боль в спине, которая мучила меня годами, и я нашёл решение только в этой клинике. Персонал очень профессиональный и смелый, что позволило мне чувствовать себя очень комфортно. После нескольких сеансов я заметил отличные результаты! Боль ушла. Я действительно рекомендую эту клинику всем — это меняет жизнь!!!",
+    "testimonials.t3.quote": "Клиника Volga Физиотерапия — отличный пример профессионализма и особой заботы о пациентах. Обстановка тёплая и чистая, а персонал всегда готов оказать поддержку и лечение с большой самоотдачей. Достижение положительных результатов и улучшение здоровья пациентов — всегда приоритет, и это делает клинику надёжным и предпочтительным местом.",
     "booking.label": "Первый Шаг",
     "booking.title": "Ваше восстановление начинается с разговора",
     "booking.desc": "Запишитесь на консультацию, и наша команда разработает план лечения с учётом ваших потребностей, вашего тела и ваших целей.",
@@ -1534,6 +1703,114 @@ document.querySelectorAll('.lang-option').forEach(btn => {
 document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
   btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
 });
+
+// Before / At VOLGA / After — auto-animating journey
+const journeyStages = {
+  sq: [
+    { stage: 'PARA TRAJTIMIT', headline: 'Dhimbje kronike?', sub: 'Lëvizje e kufizuar, netë pa gjumë, jetë e kufizuar', icon: '😣', bg: '#F5E6E3', orb: '#E8A89A', color: '#8B5E54' },
+    { stage: 'NË KLINIKËN VOLGA', headline: 'Teknologji e avancuar, kujdes personal', sub: 'Shock Wave, Human Tecar, Lazer, Magnetoterapi', icon: '🤲', bg: '#F0EBE4', orb: '#D4BC9A', color: '#7A6E64' },
+    { stage: 'PAS TRAJTIMIT', headline: 'Lëvizje pa dhimbje!', sub: 'Jetë aktive, rikuperim i plotë, trup në formë', icon: '✨', bg: '#F5F0EB', orb: '#C4A882', color: '#2C2420' }
+  ],
+  en: [
+    { stage: 'BEFORE TREATMENT', headline: 'Chronic pain?', sub: 'Limited mobility, sleepless nights, restricted life', icon: '😣', bg: '#F5E6E3', orb: '#E8A89A', color: '#8B5E54' },
+    { stage: 'AT VOLGA CLINIC', headline: 'Advanced technology, personal care', sub: 'Shock Wave, Human Tecar, Laser, Magnetotherapy', icon: '🤲', bg: '#F0EBE4', orb: '#D4BC9A', color: '#7A6E64' },
+    { stage: 'AFTER TREATMENT', headline: 'Pain-free movement!', sub: 'Active lifestyle, full recovery, body in shape', icon: '✨', bg: '#F5F0EB', orb: '#C4A882', color: '#2C2420' }
+  ],
+  it: [
+    { stage: 'PRIMA DEL TRATTAMENTO', headline: 'Dolore cronico?', sub: 'Mobilità limitata, notti insonni, vita ristretta', icon: '😣', bg: '#F5E6E3', orb: '#E8A89A', color: '#8B5E54' },
+    { stage: 'ALLA CLINICA VOLGA', headline: 'Tecnologia avanzata, cura personale', sub: 'Shock Wave, Human Tecar, Laser, Magnetoterapia', icon: '🤲', bg: '#F0EBE4', orb: '#D4BC9A', color: '#7A6E64' },
+    { stage: 'DOPO IL TRATTAMENTO', headline: 'Movimento senza dolore!', sub: 'Vita attiva, recupero completo, corpo in forma', icon: '✨', bg: '#F5F0EB', orb: '#C4A882', color: '#2C2420' }
+  ],
+  ru: [
+    { stage: 'ДО ЛЕЧЕНИЯ', headline: 'Хроническая боль?', sub: 'Ограниченная подвижность, бессонные ночи, скованная жизнь', icon: '😣', bg: '#F5E6E3', orb: '#E8A89A', color: '#8B5E54' },
+    { stage: 'В КЛИНИКЕ VOLGA', headline: 'Передовые технологии, личный подход', sub: 'Shock Wave, Human Tecar, Лазер, Магнитотерапия', icon: '🤲', bg: '#F0EBE4', orb: '#D4BC9A', color: '#7A6E64' },
+    { stage: 'ПОСЛЕ ЛЕЧЕНИЯ', headline: 'Движение без боли!', sub: 'Активная жизнь, полное восстановление, тело в форме', icon: '✨', bg: '#F5F0EB', orb: '#C4A882', color: '#2C2420' }
+  ]
+};
+
+const journey = document.getElementById('reliefJourney');
+const orb = document.getElementById('reliefOrb');
+const iconEl = document.getElementById('reliefIcon');
+const stageEl = document.getElementById('reliefStage');
+const headlineEl = document.getElementById('reliefHeadline');
+const subEl = document.getElementById('reliefSub');
+const dots = document.querySelectorAll('.relief-dot');
+let currentStage = 0;
+let journeyInterval;
+
+function showStage(idx) {
+  const lang = document.documentElement.lang || 'sq';
+  const stages = journeyStages[lang] || journeyStages.en;
+  const s = stages[idx];
+
+  journey.style.background = s.bg;
+  orb.style.background = `radial-gradient(circle at 40% 40%, #fff 0%, ${s.orb} 100%)`;
+  orb.style.boxShadow = `0 8px 48px ${s.orb}50, 0 0 0 1px ${s.orb}20`;
+  orb.style.borderColor = s.orb;
+  orb.style.transform = `scale(${0.88 + idx * 0.06})`;
+  iconEl.textContent = s.icon;
+  iconEl.style.transform = 'scale(0.6)';
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { iconEl.style.transform = 'scale(1)'; });
+  });
+  stageEl.textContent = s.stage;
+  stageEl.style.color = s.orb;
+  headlineEl.textContent = s.headline;
+  headlineEl.style.color = s.color;
+  subEl.textContent = s.sub;
+  subEl.style.color = s.color + 'aa';
+
+  dots.forEach((d, i) => {
+    d.classList.remove('active', 'past');
+    if (i === idx) d.classList.add('active');
+    else if (i < idx) d.classList.add('past');
+  });
+}
+
+function startJourney() {
+  showStage(0);
+  currentStage = 0;
+  journeyInterval = setInterval(() => {
+    currentStage = (currentStage + 1) % 3;
+    showStage(currentStage);
+  }, 3500);
+}
+
+const journeyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      startJourney();
+    } else {
+      clearInterval(journeyInterval);
+    }
+  });
+}, { threshold: 0.3 });
+journeyObserver.observe(journey);
+
+// Animated counter stats
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseFloat(el.dataset.count);
+    const isDecimal = target % 1 !== 0;
+    const duration = 2000;
+    const start = performance.now();
+
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = eased * target;
+      el.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+    countObserver.unobserve(el);
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
 
 // Mobile menu
 const mobileMenu = document.getElementById('mobileMenu');
