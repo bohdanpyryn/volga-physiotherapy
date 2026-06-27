@@ -3,22 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VOLGA Fizioterapi — Ndije Trupin në Maksimumin e Tij | Durrës, Shqipëri</title>
+<title>Fizioterapi në Durrës - VOLGA Fizioterapi & Rehabilitim</title>
+<link rel="canonical" href="https://volgafizioterapi.com/">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
-<meta name="description" content="VOLGA Physiotherapy & Rehabilitation in Durrës, Albania. Professional physiotherapy, sports rehabilitation, pain management, and postural correction. Mon–Sat 09:00–20:00. Call +355 694 013 013.">
-<meta property="og:title" content="VOLGA Fizioterapi — Feel Your Body Best">
-<meta property="og:description" content="Professional physiotherapy and rehabilitation in Durrës, Currila, Albania. Restore movement, rebuild strength, recover with confidence.">
-<meta property="og:image" content="logo-hero.jpg">
+<meta name="description" content="Fizioterapi profesionale në Durrës: terapi manuale, rehabilitim sportiv, rikuperim pas operacionit dhe menaxhim i dhimbjes. Hën-Sht 09:00-20:00. Tel +355 69 401 3013.">
+<meta property="og:title" content="Fizioterapi në Durrës - VOLGA Fizioterapi & Rehabilitim">
+<meta property="og:description" content="Fizioterapi dhe rehabilitim profesional në Durrës, Albania. Terapi manuale, rehabilitim sportiv dhe rikuperim pas operacionit. Hën-Sht 09:00-20:00.">
+<meta property="og:image" content="https://volgafizioterapi.com/hero.jpg">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.instagram.com/volga_fizioterapi/">
+<meta property="og:url" content="https://volgafizioterapi.com/">
 <meta property="og:locale" content="sq_AL">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="it_IT">
 <meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fizioterapi në Durrës - VOLGA Fizioterapi & Rehabilitim">
+<meta name="twitter:description" content="Fizioterapi dhe rehabilitim profesional në Durrës, Albania. Hën-Sht 09:00-20:00.">
+<meta name="twitter:image" content="https://volgafizioterapi.com/hero.jpg">
 <meta name="robots" content="index, follow">
 <meta name="geo.region" content="AL-DR">
 <meta name="geo.placename" content="Durrës">
+<link rel="preload" as="image" href="hero.jpg" fetchpriority="high">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["MedicalBusiness", "Physiotherapy"],
+  "name": "VOLGA Fizioterapi & Rehabilitim",
+  "url": "https://volgafizioterapi.com/",
+  "image": "https://volgafizioterapi.com/hero.jpg",
+  "telephone": "+355694013013",
+  "email": "volga.fisioterapia@gmail.com",
+  "priceRange": "$$",
+  "medicalSpecialty": "Physiotherapy",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Durrës",
+    "addressRegion": "Currila",
+    "addressCountry": "AL"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "20:00"
+  }],
+  "sameAs": ["https://www.instagram.com/volga_fizioterapi/"],
+  "areaServed": { "@type": "City", "name": "Durrës" }
+}
+</script>
 <style>
 /* ---- SELF-HOSTED FONTS ---- */
 @font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300 400; font-display: swap; src: url(fonts/cormorant-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
@@ -46,7 +79,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; overflow-x: clip; }
 
 body {
   font-family: 'Outfit', sans-serif;
@@ -171,6 +204,7 @@ body {
 /* ---- HERO ---- */
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -179,15 +213,23 @@ body {
   max-width: 1320px;
   margin: 0 auto;
 }
-.hero-text h1 {
+.hero-h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+.hero-text .hero-headline {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 68px;
+  font-size: 64px;
   font-weight: 300;
   line-height: 1.08;
   color: var(--dark);
   margin-bottom: 28px;
 }
-.hero-text h1 em {
+.hero-text .hero-headline em {
   font-style: italic;
   color: var(--gold);
 }
@@ -215,6 +257,9 @@ body {
 .hero-cta:hover { background: var(--gold); transform: translateY(-2px); }
 .hero-cta svg { width: 16px; height: 16px; transition: transform .3s; }
 .hero-cta:hover svg { transform: translateX(4px); }
+/* Touch feedback (hover doesn't fire on tap) */
+.hero-cta:active, .nav-cta:active, .hero-cta-secondary:active, .instagram-follow:active { transform: scale(.97); }
+.whatsapp-float:active { transform: scale(.93); }
 /* HERO — Option A editorial split */
 .hero-badge {
   display: inline-flex;
@@ -255,7 +300,8 @@ body {
 .hero-cta-secondary:hover { color: var(--gold); text-decoration-color: var(--gold); }
 .hero-proof {
   display: flex;
-  gap: 46px;
+  flex-wrap: wrap;
+  gap: 20px 46px;
   border-top: 1px solid var(--beige);
   padding-top: 30px;
 }
@@ -705,6 +751,43 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
+.services-table-wrap { margin-top: 60px; overflow-x: auto; }
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  min-width: 540px;
+}
+.services-table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 0 20px 16px;
+  border-bottom: 1px solid var(--beige);
+}
+.services-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--beige);
+  color: var(--text-secondary);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.services-table tbody tr:last-child td { border-bottom: none; }
+.services-table td:first-child { font-weight: 600; color: var(--dark); }
+.services-table td:last-child {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.services-table-note { margin-top: 20px; font-size: 14px; color: var(--text-light); }
+@media (max-width: 640px) {
+  .services-table th, .services-table td { padding: 14px 14px; }
+}
 .service-card {
   background: var(--cream);
   border-radius: 18px;
@@ -1058,7 +1141,7 @@ footer .footer-copy {
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 120px; }
   .relief-journey { height: 460px; }
-  .hero-text h1 { font-size: 50px; }
+  .hero-text .hero-headline { font-size: 48px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .about { grid-template-columns: 1fr; gap: 40px; }
   .about-image { height: 400px; }
@@ -1071,8 +1154,10 @@ footer .footer-copy {
   .nav { padding: 16px 24px; }
   .nav-links { display: none; }
   .nav-mobile { display: block; }
-  .hero { padding: 100px 24px 60px; }
-  .hero-text h1 { font-size: 38px; }
+  .hero { padding: 96px 24px 56px; min-height: auto; align-items: start; gap: 32px; }
+  .hero-text .hero-headline { font-size: 38px; }
+  .hero-badge { margin-bottom: 22px; }
+  .hero-actions { margin-bottom: 34px; }
   .services, .about, .approach, .testimonials, .booking-cta, .contact { padding-left: 24px; padding-right: 24px; }
   .section-title { font-size: 36px; }
   .services-grid { grid-template-columns: 1fr; }
@@ -1352,6 +1437,60 @@ footer .footer-copy {
   box-shadow: 0 6px 28px rgba(37,211,102,.5);
 }
 .whatsapp-float svg { width: 32px; height: 32px; fill: #fff; }
+/* Sticky mobile call button */
+.call-float {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  width: 60px;
+  height: 60px;
+  background: var(--dark);
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(44,36,32,.35);
+  z-index: 999;
+  text-decoration: none;
+  transition: transform .3s;
+}
+.call-float:active { transform: scale(.93); }
+.call-float svg { width: 26px; height: 26px; fill: #fff; }
+@media (max-width: 640px) { .call-float { display: flex; } }
+/* FAQ */
+.faq {
+  padding: 120px 48px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.faq .section-label { text-align: center; }
+.faq .section-title {
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto 56px;
+}
+.faq-list { display: flex; flex-direction: column; }
+.faq-item {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--beige);
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-item h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+.faq-item p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+@media (max-width: 640px) {
+  .faq { padding: 80px 24px; }
+  .faq-item h3 { font-size: 21px; }
+}
 
 /* ---- MOBILE MENU ---- */
 .mobile-menu {
@@ -1469,8 +1608,9 @@ footer .footer-copy {
 <section class="hero">
   <div class="hero-text">
     <div class="hero-badge reveal" data-i18n="hero.badge">Durrës, Currila — Hën–Sht 09:00–20:00</div>
-    <h1 class="reveal reveal-delay-1" data-i18n-html="hero.title">Ndije trupin në <em>maksimumin</em> e tij</h1>
-    <p class="reveal reveal-delay-1" data-i18n="hero.subtitle">Fizioterapi dhe rehabilitim profesional në Durrës, Shqipëri. Rikthejmë lëvizjen, rindërtojmë forcën dhe ju udhëheqim drejt shërimit të qëndrueshëm.</p>
+    <h1 class="hero-h1 reveal" data-i18n="hero.h1">Fizioterapi dhe rehabilitim në Durrës</h1>
+    <div class="hero-headline reveal reveal-delay-1" data-i18n-html="hero.title">Ndije trupin në <em>maksimumin</em> e tij</div>
+    <p class="hero-subtitle reveal reveal-delay-1" data-i18n="hero.subtitle">Fizioterapi profesionale në Durrës nga 3000 lekë — terapi manuale, rehabilitim sportiv dhe rikuperim pas operacionit. Rezervo në +355 69 401 3013.</p>
     <div class="hero-actions reveal reveal-delay-2">
       <a href="#booking" class="hero-cta">
         <span data-i18n="hero.cta">Fillo Rikuperimin</span>
@@ -1539,6 +1679,50 @@ footer .footer-copy {
       <h3 data-i18n="services.surgery.title">Rikuperim Pas-Operativ</h3>
       <p data-i18n="services.surgery.desc">Rehabilitim i udhëhequr pas kirurgjisë ortopedike, me protokolle progresive të përshtatura për procedurën tuaj.</p>
     </div>
+  </div>
+  <div class="services-table-wrap reveal">
+    <table class="services-table">
+      <thead>
+        <tr>
+          <th data-i18n="servtable.colService">Shërbimi</th>
+          <th data-i18n="servtable.colTreats">Çfarë trajton</th>
+          <th data-i18n="servtable.colFrom">Nga</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-i18n="services.manual.title">Terapi Manuale</td>
+          <td data-i18n="servtable.manual">Dhimbje shpine e qafe, tension muskulor, nyje të ngurta</td>
+          <td>3000 lek</td>
+        </tr>
+        <tr>
+          <td data-i18n="services.sports.title">Rehabilitim Sportiv</td>
+          <td data-i18n="servtable.sports">Dëmtime sportive dhe kthim i sigurt në aktivitet</td>
+          <td>3000 lek</td>
+        </tr>
+        <tr>
+          <td data-i18n="services.pain.title">Menaxhimi i Dhimbjes</td>
+          <td data-i18n="servtable.pain">Dhimbje kronike e akute të shpinës dhe qafës</td>
+          <td>3000 lek</td>
+        </tr>
+        <tr>
+          <td data-i18n="services.posture.title">Korrigjim Postural</td>
+          <td data-i18n="servtable.posture">Qëndrim i keq, çekuilibra dhe shtrirje e gabuar</td>
+          <td>3000 lek</td>
+        </tr>
+        <tr>
+          <td data-i18n="services.mobility.title">Trajnim Lëvizshmërie</td>
+          <td data-i18n="servtable.mobility">Amplitudë lëvizjeje, fleksibilitet dhe forcë funksionale</td>
+          <td>3000 lek</td>
+        </tr>
+        <tr>
+          <td data-i18n="services.surgery.title">Rikuperim Pas-Operativ</td>
+          <td data-i18n="servtable.surgery">Rikuperim pas kirurgjisë ortopedike</td>
+          <td>3000 lek</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="services-table-note" data-i18n="servtable.note">Trajtimet me aparatura (Shock Wave, Tecar, Lazer, Magnetoterapi) nga 4000 lekë — shihni listën e plotë te Çmimet.</p>
   </div>
 </section>
 
@@ -1823,6 +2007,34 @@ footer .footer-copy {
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-label reveal" data-i18n="faq.label">Pyetje të Shpeshta</div>
+  <h2 class="section-title reveal" data-i18n="faq.title">Pyetje të shpeshta për fizioterapinë në Durrës</h2>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <h3 data-i18n="faq.q1">Sa kushton një seancë fizioterapie në Durrës?</h3>
+      <p data-i18n="faq.a1">Çmimet fillojnë nga 3000 lekë për terapi manuale, limfodrenazh dhe ushtrime terapeutike. Trajtimet me aparatura: ultratingull dhe TENS 4000 lekë, lazer 4500 lekë, magnetoterapi dhe Tecar 5000 lekë, Shock Wave 7000 lekë. Për rastin tuaj specifik, na kontaktoni në +355 69 401 3013.</p>
+    </div>
+    <div class="faq-item reveal">
+      <h3 data-i18n="faq.q2">A duhet referim nga mjeku për fizioterapi?</h3>
+      <p data-i18n="faq.a2">Jo. Mund të rezervoni drejtpërdrejt një konsultë te VOLGA pa referim. Në vizitën e parë bëjmë një vlerësim të plotë dhe dizajnojmë një plan trajtimi individual sipas gjendjes, trupit dhe qëllimeve tuaja.</p>
+    </div>
+    <div class="faq-item reveal">
+      <h3 data-i18n="faq.q3">Sa seanca duhen për dhimbje shpine ose qafe?</h3>
+      <p data-i18n="faq.a3">Varet nga gjendja. Shumë pacientë ndjejnë lehtësim që në seancat e para, ndërsa rastet kronike kërkojnë një cikël më të gjatë. Numrin e saktë e përcaktojmë pas vlerësimit në vizitën e parë dhe e përshtatim gjatë trajtimit.</p>
+    </div>
+    <div class="faq-item reveal">
+      <h3 data-i18n="faq.q4">Çfarë teknologjish dhe trajtimesh ofroni?</h3>
+      <p data-i18n="faq.a4">Përdorim teknologji moderne: Shock Wave, Human Tecar, Lazer, Magnetoterapi (Storz), Ultratingull dhe TENS. Ofrojmë gjithashtu terapi manuale, rehabilitim sportiv, rikuperim pas operacionit, limfodrenazh, cupping dhe trajtime estetike (PRP, mezoterapi).</p>
+    </div>
+    <div class="faq-item reveal">
+      <h3 data-i18n="faq.q5">Cilat janë oraret dhe si mund të rezervoj?</h3>
+      <p data-i18n="faq.a5">Jemi të hapur nga e hëna në të shtunë, 09:00–20:00 (e diela pushim). Për të rezervuar, na telefononi ose na shkruani në WhatsApp në +355 69 401 3013, ose na gjeni në Instagram @volga_fizioterapi.</p>
+    </div>
+  </div>
+</section>
+
 <!-- BOOKING CTA -->
 <section class="booking-cta" id="booking">
   <div class="section-label reveal" data-i18n="booking.label">Hapi i Parë</div>
@@ -1878,6 +2090,11 @@ footer .footer-copy {
   <div class="footer-copy" data-i18n="footer.copy">&copy; 2026 VOLGA Fizioterapi & Rehabilitim. Durrës, Shqipëri.</div>
 </footer>
 
+<!-- STICKY CALL (mobile) -->
+<a href="tel:+355694013013" class="call-float" aria-label="Telefono">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.18z"/></svg>
+</a>
+
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/355694013013" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.128 6.744 3.046 9.378L1.054 31.29l6.118-1.958A15.9 15.9 0 0016.004 32C24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.334 22.594c-.39 1.1-2.274 2.104-3.132 2.168-.796.06-1.546.378-5.218-1.088-4.42-1.764-7.218-6.27-7.436-6.564-.218-.292-1.78-2.368-1.78-4.516s1.128-3.206 1.528-3.644c.4-.438.872-.548 1.164-.548.292 0 .584.004.838.014.272.012.636-.102.994.758.39.93 1.32 3.23 1.436 3.462.116.232.194.502.04.81-.156.31-.232.502-.464.774-.232.272-.486.608-.696.816-.232.232-.474.482-.204.944.272.462 1.206 1.988 2.59 3.222 1.778 1.584 3.278 2.074 3.74 2.306.462.232.732.194 1.002-.116.272-.31 1.158-1.352 1.468-1.816.31-.462.618-.386 1.042-.232.424.156 2.694 1.272 3.156 1.504.462.232.77.348.886.54.116.194.116 1.102-.274 2.206z"/></svg>
@@ -1908,7 +2125,7 @@ footer .footer-copy {
 <script>
 const translations = {
   sq: {
-    "page.title": "VOLGA Fizioterapi — Ndije Trupin në Maksimumin e Tij | Durrës, Shqipëri",
+    "page.title": "Fizioterapi në Durrës - VOLGA Fizioterapi & Rehabilitim",
     "nav.services": "Shërbimet",
     "nav.about": "Rreth Nesh",
     "nav.approach": "Procesi",
@@ -1979,8 +2196,31 @@ const translations = {
     "cases.c4.patient": "Kirill — nuk mund të shkelte në këmbë për shkak të dhimbjes dhe çrregullimit të funksionit.",
     "cases.c4.treatment": "Tejpim (taping), banderim dhe magnetoterapi. Kursi përfshiu 5 seanca.",
     "cases.c4.result": "Funksioni i këmbës u rikthye dhe pacienti iu kthye lëvizjes normale pa dhimbje.",
+    "hero.h1": "Fizioterapi dhe rehabilitim në Durrës",
+    "faq.label": "Pyetje të Shpeshta",
+    "faq.title": "Pyetje të shpeshta për fizioterapinë në Durrës",
+    "faq.q1": "Sa kushton një seancë fizioterapie në Durrës?",
+    "faq.a1": "Çmimet fillojnë nga 3000 lekë për terapi manuale, limfodrenazh dhe ushtrime terapeutike. Trajtimet me aparatura: ultratingull dhe TENS 4000 lekë, lazer 4500 lekë, magnetoterapi dhe Tecar 5000 lekë, Shock Wave 7000 lekë. Për rastin tuaj specifik, na kontaktoni në +355 69 401 3013.",
+    "faq.q2": "A duhet referim nga mjeku për fizioterapi?",
+    "faq.a2": "Jo. Mund të rezervoni drejtpërdrejt një konsultë te VOLGA pa referim. Në vizitën e parë bëjmë një vlerësim të plotë dhe dizajnojmë një plan trajtimi individual sipas gjendjes, trupit dhe qëllimeve tuaja.",
+    "faq.q3": "Sa seanca duhen për dhimbje shpine ose qafe?",
+    "faq.a3": "Varet nga gjendja. Shumë pacientë ndjejnë lehtësim që në seancat e para, ndërsa rastet kronike kërkojnë një cikël më të gjatë. Numrin e saktë e përcaktojmë pas vlerësimit në vizitën e parë dhe e përshtatim gjatë trajtimit.",
+    "faq.q4": "Çfarë teknologjish dhe trajtimesh ofroni?",
+    "faq.a4": "Përdorim teknologji moderne: Shock Wave, Human Tecar, Lazer, Magnetoterapi (Storz), Ultratingull dhe TENS. Ofrojmë gjithashtu terapi manuale, rehabilitim sportiv, rikuperim pas operacionit, limfodrenazh, cupping dhe trajtime estetike (PRP, mezoterapi).",
+    "faq.q5": "Cilat janë oraret dhe si mund të rezervoj?",
+    "faq.a5": "Jemi të hapur nga e hëna në të shtunë, 09:00–20:00 (e diela pushim). Për të rezervuar, na telefononi ose na shkruani në WhatsApp në +355 69 401 3013, ose na gjeni në Instagram @volga_fizioterapi.",
+    "servtable.colService": "Shërbimi",
+    "servtable.colTreats": "Çfarë trajton",
+    "servtable.colFrom": "Nga",
+    "servtable.manual": "Dhimbje shpine e qafe, tension muskulor, nyje të ngurta",
+    "servtable.sports": "Dëmtime sportive dhe kthim i sigurt në aktivitet",
+    "servtable.pain": "Dhimbje kronike e akute të shpinës dhe qafës",
+    "servtable.posture": "Qëndrim i keq, çekuilibra dhe shtrirje e gabuar",
+    "servtable.mobility": "Amplitudë lëvizjeje, fleksibilitet dhe forcë funksionale",
+    "servtable.surgery": "Rikuperim pas kirurgjisë ortopedike",
+    "servtable.note": "Trajtimet me aparatura (Shock Wave, Tecar, Lazer, Magnetoterapi) nga 4000 lekë — shihni listën e plotë te Çmimet.",
     "hero.title": "Ndije trupin në <em>maksimumin</em> e tij",
-    "hero.subtitle": "Fizioterapi dhe rehabilitim profesional në Durrës, Shqipëri. Rikthejmë lëvizjen, rindërtojmë forcën dhe ju udhëheqim drejt shërimit të qëndrueshëm.",
+    "hero.subtitle": "Fizioterapi profesionale në Durrës nga 3000 lekë — terapi manuale, rehabilitim sportiv dhe rikuperim pas operacionit. Rezervo në +355 69 401 3013.",
     "hero.cta": "Fillo Rikuperimin",
     "stats.patients": "Pacientë të trajtuar",
     "stats.rating": "Vlerësim në Google",
@@ -2057,7 +2297,7 @@ const translations = {
     "instagram.follow": "Na ndiqni në Instagram"
   },
   en: {
-    "page.title": "VOLGA Physiotherapy — Feel Your Body Best | Durrës, Albania",
+    "page.title": "Physiotherapy in Durrës - VOLGA Physiotherapy & Rehabilitation",
     "nav.services": "Services",
     "nav.about": "About Us",
     "nav.approach": "Approach",
@@ -2128,8 +2368,31 @@ const translations = {
     "cases.c4.patient": "Kirill — could not put weight on his leg due to pain and impaired function.",
     "cases.c4.treatment": "Taping, bandaging and magnetotherapy. The course consisted of 5 sessions.",
     "cases.c4.result": "Leg function was restored and the patient returned to normal, pain-free movement.",
+    "hero.h1": "Physiotherapy and rehabilitation in Durrës",
+    "faq.label": "Frequently Asked Questions",
+    "faq.title": "Frequently asked questions about physiotherapy in Durrës",
+    "faq.q1": "How much does a physiotherapy session in Durrës cost?",
+    "faq.a1": "Prices start from 3000 lek for manual therapy, lymphatic drainage and therapeutic exercises. Apparatus treatments: ultrasound and TENS 4000 lek, laser 4500 lek, magnetotherapy and Tecar 5000 lek, Shock Wave 7000 lek. For your specific case, contact us on +355 69 401 3013.",
+    "faq.q2": "Do I need a doctor's referral for physiotherapy?",
+    "faq.a2": "No. You can book a consultation at VOLGA directly, without a referral. At your first visit we carry out a full assessment and design an individual treatment plan around your condition, body and goals.",
+    "faq.q3": "How many sessions are needed for back or neck pain?",
+    "faq.a3": "It depends on your condition. Many patients feel relief from the first sessions, while chronic cases need a longer course. We determine the exact number after the assessment at your first visit and adjust it during treatment.",
+    "faq.q4": "What technology and treatments do you offer?",
+    "faq.a4": "We use modern technology: Shock Wave, Human Tecar, Laser, Magnetotherapy (Storz), Ultrasound and TENS. We also offer manual therapy, sports rehabilitation, post-operative recovery, lymphatic drainage, cupping and aesthetic treatments (PRP, mesotherapy).",
+    "faq.q5": "What are your hours and how do I book?",
+    "faq.a5": "We are open Monday to Saturday, 09:00–20:00 (closed Sunday). To book, call or message us on WhatsApp at +355 69 401 3013, or find us on Instagram @volga_fizioterapi.",
+    "servtable.colService": "Service",
+    "servtable.colTreats": "What it treats",
+    "servtable.colFrom": "From",
+    "servtable.manual": "Back & neck pain, muscle tension, stiff joints",
+    "servtable.sports": "Sports injuries and safe return to activity",
+    "servtable.pain": "Chronic and acute back and neck pain",
+    "servtable.posture": "Poor posture, imbalances and misalignment",
+    "servtable.mobility": "Range of motion, flexibility and functional strength",
+    "servtable.surgery": "Recovery after orthopedic surgery",
+    "servtable.note": "Apparatus treatments (Shock Wave, Tecar, Laser, Magnetotherapy) from 4000 lek — see the full price list.",
     "hero.title": "Feel your body <em>best</em>",
-    "hero.subtitle": "Professional physiotherapy and rehabilitation in Durrës, Albania. We restore movement, rebuild strength, and guide your path to lasting recovery.",
+    "hero.subtitle": "Professional physiotherapy in Durrës from 3000 lek — manual therapy, sports rehabilitation and post-operative recovery. Book on +355 69 401 3013.",
     "hero.cta": "Begin Your Recovery",
     "stats.patients": "Patients treated",
     "stats.rating": "Google rating",
@@ -2206,7 +2469,7 @@ const translations = {
     "instagram.follow": "Follow us on Instagram"
   },
   it: {
-    "page.title": "VOLGA Fisioterapia — Senti il Tuo Corpo al Meglio | Durrës, Albania",
+    "page.title": "Fisioterapia a Durrës - VOLGA Fisioterapia & Riabilitazione",
     "nav.services": "Servizi",
     "nav.about": "Chi Siamo",
     "nav.approach": "Approccio",
@@ -2277,8 +2540,31 @@ const translations = {
     "cases.c4.patient": "Kirill — non riusciva ad appoggiare la gamba a causa del dolore e della funzionalità compromessa.",
     "cases.c4.treatment": "Taping, bendaggio e magnetoterapia. Il ciclo ha previsto 5 sedute.",
     "cases.c4.result": "La funzionalità della gamba è stata ripristinata e il paziente è tornato a muoversi normalmente senza dolore.",
+    "hero.h1": "Fisioterapia e riabilitazione a Durrës",
+    "faq.label": "Domande Frequenti",
+    "faq.title": "Domande frequenti sulla fisioterapia a Durrës",
+    "faq.q1": "Quanto costa una seduta di fisioterapia a Durrës?",
+    "faq.a1": "I prezzi partono da 3000 lek per terapia manuale, linfodrenaggio ed esercizi terapeutici. Trattamenti strumentali: ultrasuoni e TENS 4000 lek, laser 4500 lek, magnetoterapia e Tecar 5000 lek, Shock Wave 7000 lek. Per il vostro caso specifico, contattateci al +355 69 401 3013.",
+    "faq.q2": "Serve la prescrizione del medico per la fisioterapia?",
+    "faq.a2": "No. Potete prenotare un consulto da VOLGA direttamente, senza prescrizione. Alla prima visita effettuiamo una valutazione completa e progettiamo un piano di trattamento individuale in base alla vostra condizione, corpo e obiettivi.",
+    "faq.q3": "Quante sedute servono per il mal di schiena o di collo?",
+    "faq.a3": "Dipende dalla condizione. Molti pazienti avvertono sollievo già dalle prime sedute, mentre i casi cronici richiedono un ciclo più lungo. Determiniamo il numero esatto dopo la valutazione alla prima visita e lo adattiamo durante il trattamento.",
+    "faq.q4": "Quali tecnologie e trattamenti offrite?",
+    "faq.a4": "Utilizziamo tecnologie moderne: Shock Wave, Human Tecar, Laser, Magnetoterapia (Storz), Ultrasuoni e TENS. Offriamo anche terapia manuale, riabilitazione sportiva, recupero post-operatorio, linfodrenaggio, coppettazione e trattamenti estetici (PRP, mesoterapia).",
+    "faq.q5": "Quali sono gli orari e come posso prenotare?",
+    "faq.a5": "Siamo aperti dal lunedì al sabato, 09:00–20:00 (domenica chiuso). Per prenotare, chiamateci o scriveteci su WhatsApp al +355 69 401 3013, oppure trovateci su Instagram @volga_fizioterapi.",
+    "servtable.colService": "Servizio",
+    "servtable.colTreats": "Cosa tratta",
+    "servtable.colFrom": "Da",
+    "servtable.manual": "Mal di schiena e collo, tensione muscolare, articolazioni rigide",
+    "servtable.sports": "Infortuni sportivi e ritorno sicuro all'attività",
+    "servtable.pain": "Dolore cronico e acuto a schiena e collo",
+    "servtable.posture": "Postura scorretta, squilibri e disallineamenti",
+    "servtable.mobility": "Ampiezza di movimento, flessibilità e forza funzionale",
+    "servtable.surgery": "Recupero dopo chirurgia ortopedica",
+    "servtable.note": "Trattamenti strumentali (Shock Wave, Tecar, Laser, Magnetoterapia) da 4000 lek — vedi il listino completo.",
     "hero.title": "Senti il tuo corpo al <em>meglio</em>",
-    "hero.subtitle": "Fisioterapia e riabilitazione professionale a Durrës, Albania. Ripristiniamo il movimento, ricostruiamo la forza e vi guidiamo verso un recupero duraturo.",
+    "hero.subtitle": "Fisioterapia professionale a Durrës da 3000 lek — terapia manuale, riabilitazione sportiva e recupero post-operatorio. Prenota al +355 69 401 3013.",
     "hero.cta": "Inizia il Recupero",
     "stats.patients": "Pazienti trattati",
     "stats.rating": "Valutazione Google",
@@ -2355,7 +2641,7 @@ const translations = {
     "instagram.follow": "Seguici su Instagram"
   },
   ru: {
-    "page.title": "VOLGA Физиотерапия — Почувствуй Своё Тело | Дуррес, Албания",
+    "page.title": "Физиотерапия в Дурресе - VOLGA Физиотерапия и реабилитация",
     "nav.services": "Услуги",
     "nav.about": "О Нас",
     "nav.approach": "Подход",
@@ -2426,8 +2712,31 @@ const translations = {
     "cases.c4.patient": "Кирилл — не мог наступать на ногу из-за боли и нарушения функции.",
     "cases.c4.treatment": "Тейпирование, бандажирование и магнитотерапия. Курс составил 5 сеансов.",
     "cases.c4.result": "Функция ноги восстановлена, пациент вернулся к нормальному передвижению без боли.",
+    "hero.h1": "Физиотерапия и реабилитация в Дурресе",
+    "faq.label": "Частые вопросы",
+    "faq.title": "Частые вопросы о физиотерапии в Дурресе",
+    "faq.q1": "Сколько стоит сеанс физиотерапии в Дурресе?",
+    "faq.a1": "Цены начинаются от 3000 лек за мануальную терапию, лимфодренаж и терапевтические упражнения. Аппаратные процедуры: ультразвук и TENS 4000 лек, лазер 4500 лек, магнитотерапия и Tecar 5000 лек, Shock Wave 7000 лек. По вашему конкретному случаю свяжитесь с нами: +355 69 401 3013.",
+    "faq.q2": "Нужно ли направление от врача для физиотерапии?",
+    "faq.a2": "Нет. Вы можете записаться на консультацию в VOLGA напрямую, без направления. На первом приёме мы проводим полную оценку и составляем индивидуальный план лечения с учётом вашего состояния, тела и целей.",
+    "faq.q3": "Сколько сеансов нужно при боли в спине или шее?",
+    "faq.a3": "Зависит от состояния. Многие пациенты чувствуют облегчение уже с первых сеансов, тогда как хронические случаи требуют более длительного курса. Точное количество определяем после оценки на первом приёме и корректируем в процессе лечения.",
+    "faq.q4": "Какие технологии и процедуры вы предлагаете?",
+    "faq.a4": "Мы используем современные технологии: Shock Wave, Human Tecar, лазер, магнитотерапия (Storz), ультразвук и TENS. Также предлагаем мануальную терапию, спортивную реабилитацию, восстановление после операций, лимфодренаж, баночный массаж и эстетические процедуры (PRP, мезотерапия).",
+    "faq.q5": "Какой у вас график и как записаться?",
+    "faq.a5": "Мы открыты с понедельника по субботу, 09:00–20:00 (воскресенье выходной). Чтобы записаться, позвоните или напишите нам в WhatsApp на +355 69 401 3013, или найдите нас в Instagram @volga_fizioterapi.",
+    "servtable.colService": "Услуга",
+    "servtable.colTreats": "Что лечит",
+    "servtable.colFrom": "От",
+    "servtable.manual": "Боль в спине и шее, мышечное напряжение, тугоподвижные суставы",
+    "servtable.sports": "Спортивные травмы и безопасное возвращение к нагрузкам",
+    "servtable.pain": "Хроническая и острая боль в спине и шее",
+    "servtable.posture": "Нарушения осанки, дисбаланс и неправильное положение",
+    "servtable.mobility": "Амплитуда движений, гибкость и функциональная сила",
+    "servtable.surgery": "Восстановление после ортопедических операций",
+    "servtable.note": "Аппаратные процедуры (Shock Wave, Tecar, лазер, магнитотерапия) от 4000 лек — см. полный прайс.",
     "hero.title": "Почувствуй своё тело <em>лучше</em>",
-    "hero.subtitle": "Профессиональная физиотерапия и реабилитация в Дурресе, Албания. Мы восстанавливаем движение, возвращаем силу и направляем вас к устойчивому выздоровлению.",
+    "hero.subtitle": "Профессиональная физиотерапия в Дурресе от 3000 лек — мануальная терапия, спортивная реабилитация и восстановление после операции. Запись: +355 69 401 3013.",
     "hero.cta": "Начать Восстановление",
     "stats.patients": "Пациентов вылечено",
     "stats.rating": "Рейтинг Google",
