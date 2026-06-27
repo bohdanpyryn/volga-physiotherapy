@@ -38,17 +38,35 @@
   "medicalSpecialty": "Physiotherapy",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Rruga Currila",
     "addressLocality": "Durrës",
-    "addressRegion": "Currila",
+    "postalCode": "2000",
     "addressCountry": "AL"
   },
+  "geo": { "@type": "GeoCoordinates", "latitude": 41.3124408, "longitude": 19.4342668 },
+  "hasMap": "https://www.google.com/maps?cid=8676549404554840875",
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     "opens": "09:00",
     "closes": "20:00"
   }],
-  "sameAs": ["https://www.instagram.com/volga_fizioterapi/"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "48",
+    "bestRating": "5"
+  },
+  "review": [{
+    "@type": "Review",
+    "author": { "@type": "Person", "name": "Ivan Fomin" },
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "reviewBody": "Very good physiotherapy and professional physiotherapists. Many special equipment. I come with leg and the back problem. After 5 times i filling myself much better."
+  }],
+  "sameAs": [
+    "https://www.instagram.com/volga_fizioterapi/",
+    "https://www.google.com/maps?cid=8676549404554840875"
+  ],
   "areaServed": { "@type": "City", "name": "Durrës" }
 }
 </script>
@@ -970,6 +988,25 @@ body {
   max-width: 1320px;
   margin: 0 auto;
 }
+.reviews-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: -32px 0 46px;
+  padding: 11px 22px;
+  background: var(--cream);
+  border-radius: 100px;
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 15px;
+  transition: transform .3s, box-shadow .3s;
+}
+.reviews-badge:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(44,36,32,.08); }
+.reviews-badge:active { transform: scale(.98); }
+.reviews-stars { color: var(--gold); letter-spacing: 1px; }
+.reviews-score { font-weight: 700; }
+.reviews-count { color: var(--text-secondary); }
+.reviews-badge svg { width: 15px; height: 15px; color: var(--gold); }
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1954,6 +1991,12 @@ footer .footer-copy {
 <section class="testimonials" id="testimonials">
   <div class="section-label reveal" data-i18n="testimonials.label">Vlerësime</div>
   <h2 class="section-title reveal" data-i18n="testimonials.title">Çfarë thonë pacientët tanë</h2>
+  <a class="reviews-badge reveal" href="https://www.google.com/maps?cid=8676549404554840875" target="_blank" rel="noopener" aria-label="Google reviews">
+    <span class="reviews-stars">★★★★★</span>
+    <span class="reviews-score">4.9</span>
+    <span class="reviews-count" data-i18n="reviews.count">48 vlerësime në Google</span>
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+  </a>
   <div class="testimonials-grid">
     <div class="testimonial-card reveal reveal-delay-1">
       <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
@@ -2047,13 +2090,13 @@ footer .footer-copy {
 <section class="contact" id="contact">
   <div class="contact-info reveal">
     <h3 data-i18n="contact.visit">Na Vizitoni</h3>
-    <p><strong data-i18n="contact.address.label">Adresa</strong><br><span data-i18n="contact.address.value">Durrës, Currila, Shqipëri</span></p>
+    <p><strong data-i18n="contact.address.label">Adresa</strong><br><span data-i18n="contact.address.value">Rruga Currila, Durrës 2000, Shqipëri</span><br><a href="https://www.google.com/maps?cid=8676549404554840875" target="_blank" rel="noopener" data-i18n="contact.directions" style="color:var(--gold);text-decoration:none;font-size:14px;">Merr udhëzime →</a></p>
     <p><strong data-i18n="contact.phone.label">Telefoni</strong><br><a href="tel:+355694013013" style="color:inherit;text-decoration:none;">+355 694 013 013</a></p>
     <p><strong>Email</strong><br><a href="mailto:volga.fisioterapia@gmail.com" style="color:var(--gold);text-decoration:none;">volga.fisioterapia@gmail.com</a></p>
     <p><strong>Instagram</strong><br><a href="https://www.instagram.com/volga_fizioterapi/" target="_blank" style="color:var(--gold);text-decoration:none;">@volga_fizioterapi</a></p>
     <p><strong data-i18n="contact.hours.label">Orari</strong><br><span data-i18n="contact.hours.value">Hën–Sht: 09:00–20:00</span><br><span data-i18n="contact.hours.closed">Die: Mbyllur</span></p>
     <div style="width:100%;height:300px;border-radius:18px;overflow:hidden;margin-top:32px;">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2993.0!2d19.47!3d41.35!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fdb0c6cfece6f%3A0x78694bb68e9e4b2b!2z!5e0!3m2!1sen!2s!4v1" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2993.0!2d19.4342668!3d41.3124408!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134fdb0c6cfece6f%3A0x78694bb68e9e4b2b!2z!5e0!3m2!1sen!2s!4v1" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
   <div class="contact-info reveal reveal-delay-2">
@@ -2219,6 +2262,7 @@ const translations = {
     "servtable.mobility": "Amplitudë lëvizjeje, fleksibilitet dhe forcë funksionale",
     "servtable.surgery": "Rikuperim pas kirurgjisë ortopedike",
     "servtable.note": "Trajtimet me aparatura (Shock Wave, Tecar, Lazer, Magnetoterapi) nga 4000 lekë — shihni listën e plotë te Çmimet.",
+    "reviews.count": "48 vlerësime në Google",
     "hero.title": "Ndije trupin në <em>maksimumin</em> e tij",
     "hero.subtitle": "Fizioterapi profesionale në Durrës nga 3000 lekë — terapi manuale, rehabilitim sportiv dhe rikuperim pas operacionit. Rezervo në +355 69 401 3013.",
     "hero.cta": "Fillo Rikuperimin",
@@ -2274,7 +2318,8 @@ const translations = {
     "booking.cta": "Thirr +355 694 013 013",
     "contact.visit": "Na Vizitoni",
     "contact.address.label": "Adresa",
-    "contact.address.value": "Durrës, Currila, Shqipëri",
+    "contact.address.value": "Rruga Currila, Durrës 2000, Shqipëri",
+    "contact.directions": "Merr udhëzime →",
     "contact.phone.label": "Telefoni",
     "contact.hours.label": "Orari",
     "contact.hours.value": "Hën–Sht: 09:00–20:00",
@@ -2391,6 +2436,7 @@ const translations = {
     "servtable.mobility": "Range of motion, flexibility and functional strength",
     "servtable.surgery": "Recovery after orthopedic surgery",
     "servtable.note": "Apparatus treatments (Shock Wave, Tecar, Laser, Magnetotherapy) from 4000 lek — see the full price list.",
+    "reviews.count": "48 reviews on Google",
     "hero.title": "Feel your body <em>best</em>",
     "hero.subtitle": "Professional physiotherapy in Durrës from 3000 lek — manual therapy, sports rehabilitation and post-operative recovery. Book on +355 69 401 3013.",
     "hero.cta": "Begin Your Recovery",
@@ -2446,7 +2492,8 @@ const translations = {
     "booking.cta": "Call +355 694 013 013",
     "contact.visit": "Visit Us",
     "contact.address.label": "Address",
-    "contact.address.value": "Durrës, Currila, Albania",
+    "contact.address.value": "Rruga Currila, Durrës 2000, Albania",
+    "contact.directions": "Get directions →",
     "contact.phone.label": "Phone",
     "contact.hours.label": "Hours",
     "contact.hours.value": "Mon–Sat: 09:00–20:00",
@@ -2563,6 +2610,7 @@ const translations = {
     "servtable.mobility": "Ampiezza di movimento, flessibilità e forza funzionale",
     "servtable.surgery": "Recupero dopo chirurgia ortopedica",
     "servtable.note": "Trattamenti strumentali (Shock Wave, Tecar, Laser, Magnetoterapia) da 4000 lek — vedi il listino completo.",
+    "reviews.count": "48 recensioni su Google",
     "hero.title": "Senti il tuo corpo al <em>meglio</em>",
     "hero.subtitle": "Fisioterapia professionale a Durrës da 3000 lek — terapia manuale, riabilitazione sportiva e recupero post-operatorio. Prenota al +355 69 401 3013.",
     "hero.cta": "Inizia il Recupero",
@@ -2618,7 +2666,8 @@ const translations = {
     "booking.cta": "Chiama +355 694 013 013",
     "contact.visit": "Visitateci",
     "contact.address.label": "Indirizzo",
-    "contact.address.value": "Durrës, Currila, Albania",
+    "contact.address.value": "Rruga Currila, Durrës 2000, Albania",
+    "contact.directions": "Indicazioni stradali →",
     "contact.phone.label": "Telefono",
     "contact.hours.label": "Orario",
     "contact.hours.value": "Lun–Sab: 09:00–20:00",
@@ -2735,6 +2784,7 @@ const translations = {
     "servtable.mobility": "Амплитуда движений, гибкость и функциональная сила",
     "servtable.surgery": "Восстановление после ортопедических операций",
     "servtable.note": "Аппаратные процедуры (Shock Wave, Tecar, лазер, магнитотерапия) от 4000 лек — см. полный прайс.",
+    "reviews.count": "48 отзывов в Google",
     "hero.title": "Почувствуй своё тело <em>лучше</em>",
     "hero.subtitle": "Профессиональная физиотерапия в Дурресе от 3000 лек — мануальная терапия, спортивная реабилитация и восстановление после операции. Запись: +355 69 401 3013.",
     "hero.cta": "Начать Восстановление",
@@ -2790,7 +2840,8 @@ const translations = {
     "booking.cta": "Звоните +355 694 013 013",
     "contact.visit": "Посетите Нас",
     "contact.address.label": "Адрес",
-    "contact.address.value": "Дуррес, Куррила, Албания",
+    "contact.address.value": "Rruga Currila, Durrës 2000, Албания",
+    "contact.directions": "Маршрут →",
     "contact.phone.label": "Телефон",
     "contact.hours.label": "Часы Работы",
     "contact.hours.value": "Пн–Сб: 09:00–20:00",
