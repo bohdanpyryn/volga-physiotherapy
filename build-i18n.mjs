@@ -46,7 +46,7 @@ for (const lang of ['en', 'it', 'ru', 'uk']) {
 
   // serialize + make relative asset paths root-absolute (so they resolve under /xx/)
   let out = dom.serialize()
-    .replace(/url\(fonts\//g, 'url(/fonts/')
+    .replace(/url\((?!\/|https?:|#|data:|['"])/g, 'url(/')
     .replace(/(src|href)="(?!\/|https?:|#|mailto:|tel:|data:)/g, '$1="/');
 
   mkdirSync(lang, { recursive: true });
