@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:i18n": "node build-i18n.mjs",
+    "build:qr": "node gen-qr.mjs",
+    "deploy": "npx --yes wrangler pages deploy ."
   },
   "repository": {
     "type": "git",
@@ -14,7 +16,8 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "dependencies": {
+  "comment": "Static site deployed to Cloudflare Pages with `npm run deploy` (wrangler). The deps below are build-time only (page generation + QR + screenshots); nothing is needed at runtime.",
+  "devDependencies": {
     "jsdom": "^29.1.1",
     "playwright": "^1.61.1",
     "qrcode": "^1.5.4"
