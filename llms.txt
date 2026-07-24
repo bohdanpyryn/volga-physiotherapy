@@ -22,3 +22,4 @@ Website: https://volgafizioterapi.com/
 ## Key pages
 - Homepage: https://volgafizioterapi.com/
 - Technology: https://volgafizioterapi.com/technology
+- Price list: https://volgafizioterapi.com/pricelist
